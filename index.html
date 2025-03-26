@@ -14,7 +14,7 @@
     body {
       background-color: #000;
       background-image: url('fondo8.png');
-      background-size: contain;
+      background-size: cover;
       background-repeat: no-repeat;
       background-position: top center;
       background-attachment: scroll;
@@ -28,15 +28,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 30px 20px 80px;
+      padding: 0;
     }
 
     .portada {
-      width: 80%;
-      max-width: 220px;
-      border-radius: 20px;
-      box-shadow: 0 0 25px #FF69B4;
-      margin: 30px auto;
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      margin: 0 auto;
+      border-radius: 0;
+      box-shadow: none;
     }
 
     h1 {
@@ -44,7 +47,7 @@
       color: #ff66cc;
       text-shadow: 0 0 5px #fff, 0 0 15px #FF69B4, 0 0 25px #ff00ff;
       animation: parpadeo 1.8s infinite;
-      margin: 20px 0;
+      margin: 40px 0 10px;
     }
 
     @keyframes parpadeo {
@@ -54,12 +57,9 @@
 
     .textos {
       text-align: center;
-      padding: 0 10px;
+      padding: 0 20px;
       max-width: 700px;
-      background-color: rgba(0, 0, 0, 0.6);
-      border-radius: 20px;
-      margin-top: 10px;
-      padding: 20px;
+      margin-top: 30px;
     }
 
     .countdown {
@@ -72,6 +72,9 @@
     .detalles {
       margin-top: 30px;
       color: #ffe0f5;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 15px;
     }
 
     .detalles h2 {
@@ -91,15 +94,14 @@
 
     @media screen and (max-width: 768px) {
       h1 { font-size: 2em; }
-      .portada { max-width: 180px; }
     }
   </style>
 </head>
 <body>
   <div class="contenido">
     <img src="imagen.jpg" alt="Foto de Daniela" class="portada">
-    <h1>¡Daniela cumple 7 años!</h1>
 
+    <h1>¡Daniela cumple 7 años!</h1>
     <div class="textos">
       <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
       <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
@@ -134,4 +136,3 @@
   </script>
 </body>
 </html>
-
