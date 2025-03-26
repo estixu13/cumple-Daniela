@@ -1,122 +1,152 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Invitación Monster High - Daniela</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background-color: #1a1a1a;
-      background-image: linear-gradient(to bottom, #1a1a1a, #000);
-      color: #f7c0f9;
-      text-align: center;
-    }
-
-    .header {
-      background-image: url('https://i.imgur.com/hZ7VbA5.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      padding: 20px;
-    }
-
-    .header img {
-      width: 280px;
-      max-width: 90vw;
-      border-radius: 20px;
-      box-shadow: 0 0 25px #ff00cc;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 2.8em;
-      color: #ff66cc;
-      animation: blink 2s infinite;
-      text-shadow: 0 0 8px #fff, 0 0 20px #ff66cc;
-      margin-bottom: 0.5em;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
-    }
-
-    .contenido {
-      padding: 40px 20px;
-    }
-
-    .contenido p {
-      font-size: 1.2em;
-      color: #ffc8f8;
-      margin-bottom: 1.5em;
-    }
-
-    .countdown {
-      font-size: 1.5em;
-      color: #fff;
-      text-shadow: 0 0 10px #ff00cc;
-    }
-
-    .detalles {
-      margin-top: 2em;
-      font-size: 1.1em;
-      line-height: 1.8;
-      color: #ffe0f9;
-    }
-
-    a {
-      color: #ff99dd;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <div class="header">
-    <img src="imagen.jpg" alt="Foto Daniela">
-    <h1>¡Daniela cumple 7 años!</h1>
-  </div>
-
-  <div class="contenido">
-    <p>¡Estás invitad@ a una fiesta <strong>monstruosamente divertida</strong>! 💀🎉🎂</p>
-    <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
-
-    <div class="detalles">
-      <p><strong>🗓 Fecha:</strong> Junio 2025</p>
-      <p><strong>🕔 Hora:</strong> 17:00 h</p>
-      <p><strong>📍 Lugar:</strong> Parque de bolas</p>
-      <p><a href="https://www.google.com/maps" target="_blank">🔎 Ver ubicación en Google Maps</a></p>
-      <p><a href="https://wa.me/34661198835" target="_blank">💌 Confirma por WhatsApp</a></p>
-    </div>
-  </div>
-
-  <script>
-    const evento = new Date("2025-06-01T17:00:00").getTime();
-    const cuentaRegresiva = setInterval(() => {
-      const ahora = new Date().getTime();
-      const distancia = evento - ahora;
-      if (distancia < 0) {
-        clearInterval(cuentaRegresiva);
-        document.getElementById("countdown").innerText = "¡Ya comenzó la fiesta! 🎉";
-        return;
-      }
-      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-      document.getElementById("countdown").innerText = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
-    }, 1000);
-  </script>
-</body>
-</html>
-
+ <html lang="es">
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <title>Invitación de Daniela - Monster High</title>
+   <style>
+     body {
+       margin: 0;
+       font-family: 'Comic Sans MS', cursive, sans-serif;
+       background: url('fondo2.jpeg') no-repeat center center fixed;
+       background-size: cover;
+       color: #FF4ECB; /* Fucsia brillante */
+       text-align: center;
+     }
+     .container {
+       padding: 20px;
+       background-color: transparent;
+       border-radius: 20px;
+       margin: 0 auto;
+       max-width: 800px;
+     }
+     h1 {
+       font-size: 3em;
+       color: #FF4ECB;
+       text-shadow: 2px 2px 6px #000;
+       margin-top: 20px;
+       animation: parpadeoColor 2s ease-in-out infinite;
+     }
+     @keyframes parpadeoColor {
+       0% {
+         color: #FF4ECB;
+         text-shadow: 2px 2px 10px #000;
+         opacity: 1;
+       }
+       50% {
+         color: #fff;
+         text-shadow: 2px 2px 10px #FF4ECB;
+         opacity: 0.6;
+       }
+       100% {
+         color: #FF4ECB;
+         text-shadow: 2px 2px 10px #000;
+         opacity: 1;
+       }
+     }
+     .countdown {
+       font-size: 2em;
+       margin: 20px 0;
+       color: #FF4ECB;
+     }
+     footer {
+       margin-top: 40px;
+       font-size: 0.9em;
+       color: #FF4ECB;
+     }
+     img.portada {
+       max-width: 90%;
+       display: block;
+       margin: 0 auto 20px auto;
+       border-radius: 20px;
+       box-shadow: 0 0 20px #FF4ECB;
+     }
+    img.portada {
+   width: 100%;
+   height: auto;
+   display: block;
+   margin: 0 auto 20px auto;
+   border-radius: 20px;
+   box-shadow: 0 0 20px #FF4ECB;
+   max-width: 600px; /* Para que no se estire demasiado en escritorio */
+ }
+ 
+     a.ubicacion {
+       color: #FF4ECB;
+       text-decoration: underline;
+       display: inline-block;
+       margin-top: 10px;
+     }
+     .mensaje-rsvp {
+       font-size: 1.2em;
+       background-color: rgba(255, 255, 255, 0.3);
+       padding: 15px;
+       border-radius: 15px;
+       margin-top: 20px;
+       max-width: 600px;
+       margin-left: auto;
+       margin-right: auto;
+       color: #FF4ECB;
+     }
+     .mensaje-rsvp a {
+       color: #25D366;
+       font-weight: bold;
+       text-decoration: none;
+     }
+   </style>
+ </head>
+ <body>
+   <div class="container">
+     <img class="portada" src="imagen.jpg" alt="Daniela Monster High">
+ 
+     <h1>¡Daniela cumple 7 años!</h1>
+     <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
+ 
+     <div class="countdown" id="countdown">
+       Cargando cuenta regresiva...
+     </div>
+ 
+     <h2>📍 Detalles del evento</h2>
+     <p><strong>Fecha:</strong> Junio 2025</p>
+     <p><strong>Hora:</strong> 17:00 h</p>
+     <p><strong>Lugar:</strong> Parque de bolas</p>
+     <a class="ubicacion" href="https://www.google.com/maps" target="_blank">📍 Ver ubicación en Google Maps</a>
+ 
+     <div class="mensaje-rsvp">
+       💌 <strong>Confirma tu asistencia como toda una monstruita:</strong><br>
+       mándame un gritito por WhatsApp o una señal espeluznantemente fabulosa.<br>
+       ¡Te espero! 💜🕷️<br><br>
+ 
+       <a href="https://wa.me/34611223344" target="_blank">
+         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30" style="vertical-align: middle;"/>
+         Escríbeme por WhatsApp
+       </a>
+     </div>
+ 
+     <footer>
+       Con cariño, Daniela 💜😘
+     </footer>
+   </div>
+ 
+   <script>
+     const evento = new Date("2025-06-01T17:00:00").getTime();
+ 
+     const cuentaRegresiva = setInterval(function() {
+       const ahora = new Date().getTime();
+       const distancia = evento - ahora;
+ 
+       const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+       const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+       const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+       const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+ 
+       document.getElementById("countdown").innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+ 
+       if (distancia < 0) {
+         clearInterval(cuentaRegresiva);
+         document.getElementById("countdown").innerHTML = "¡Ya comenzó la fiesta! 🎉";
+       }
+     }, 1000);
+   </script>
+ </body>
+ </html>
