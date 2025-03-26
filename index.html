@@ -12,8 +12,8 @@
     body {
       margin: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: url('fondo2.jpeg') no-repeat center center fixed;
-      background-size: cover;
+      background: url('fondo2.jpeg') no-repeat center top fixed;
+      background-size: contain;
       background-color: #000;
       color: #FF4ECB;
       text-align: center;
@@ -69,13 +69,13 @@
 
     img.portada {
       width: 100%;
+      max-width: 600px;
       height: auto;
       display: block;
       margin: 0 auto 20px auto;
       border-radius: 20px;
-      box-shadow: 0 0 20px #FF4ECB;
-      max-width: 500px;
       object-fit: contain;
+      box-shadow: 0 0 20px #FF4ECB;
     }
 
     a.ubicacion {
@@ -102,6 +102,12 @@
     }
 
     @media (max-width: 768px) {
+      body {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center top;
+      }
+
       h1 {
         font-size: 2.2em;
       }
@@ -180,4 +186,3 @@
   </script>
 </body>
 </html>
-
