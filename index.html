@@ -18,15 +18,22 @@
       overflow-x: hidden;
     }
 
-    .background {
-      background: url('fondo2.jpeg') no-repeat center center;
-      background-size: contain;
+    /* Fondo como imagen real */
+    .fondo-completo {
       position: fixed;
       top: 0;
       left: 0;
-      height: 100vh;
-      width: 100vw;
       z-index: -1;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .fondo-completo {
+        object-fit: contain;
+        background-color: black;
+      }
     }
 
     .container {
@@ -136,7 +143,8 @@
   </style>
 </head>
 <body>
-  <div class="background"></div>
+  <!-- Fondo Monster High como imagen -->
+  <img class="fondo-completo" src="fondo2.jpeg" alt="Fondo Monster High" />
 
   <div class="container">
     <img class="portada" src="imagen.jpg" alt="Daniela Monster High">
@@ -144,9 +152,7 @@
     <h1>¡Daniela cumple 7 años!</h1>
     <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
 
-    <div class="countdown" id="countdown">
-      Cargando cuenta regresiva...
-    </div>
+    <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
 
     <h2>📍 Detalles del evento</h2>
     <p><strong>Fecha:</strong> Junio 2025</p>
@@ -158,32 +164,25 @@
       💌 <strong>Confirma tu asistencia como toda una monstruita:</strong><br>
       mándame un gritito por WhatsApp o una señal espeluznantemente fabulosa.<br>
       ¡Te espero! 💜🕷️<br><br>
-
       <a href="https://wa.me/34661198835" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30" style="vertical-align: middle;"/>
         Escríbeme por WhatsApp
       </a>
     </div>
 
-    <footer>
-      Con cariño, Daniela 💜😘
-    </footer>
+    <footer>Con cariño, Daniela 💜😘</footer>
   </div>
 
   <script>
     const evento = new Date("2025-06-01T17:00:00").getTime();
-
     const cuentaRegresiva = setInterval(function() {
       const ahora = new Date().getTime();
       const distancia = evento - ahora;
-
       const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
       const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
       const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
       document.getElementById("countdown").innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
-
       if (distancia < 0) {
         clearInterval(cuentaRegresiva);
         document.getElementById("countdown").innerHTML = "¡Ya comenzó la fiesta! 🎉";
@@ -192,3 +191,4 @@
   </script>
 </body>
 </html>
+
