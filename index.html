@@ -9,17 +9,22 @@
       margin: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
       background: url('fondo2.jpeg') no-repeat center center fixed;
-      background-size: cover;
-      color: #FF4ECB; /* Fucsia brillante */
+      background-size: contain;
+      background-color: #000;
+      color: #FF4ECB;
       text-align: center;
     }
+
     .container {
-      padding: 20px;
-      background-color: transparent;
-      border-radius: 20px;
-      margin: 0 auto;
+      width: 100%;
       max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
     h1 {
       font-size: 3em;
       color: #FF4ECB;
@@ -27,6 +32,7 @@
       margin-top: 20px;
       animation: parpadeoColor 2s ease-in-out infinite;
     }
+
     @keyframes parpadeoColor {
       0% {
         color: #FF4ECB;
@@ -34,7 +40,7 @@
         opacity: 1;
       }
       50% {
-        color: #fff;
+        color: #ffffff;
         text-shadow: 2px 2px 10px #FF4ECB;
         opacity: 0.6;
       }
@@ -44,25 +50,28 @@
         opacity: 1;
       }
     }
+
     .countdown {
       font-size: 2em;
       margin: 20px 0;
       color: #FF4ECB;
     }
+
     footer {
       margin-top: 40px;
       font-size: 0.9em;
       color: #FF4ECB;
     }
-   img.portada {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto 20px auto;
-  border-radius: 20px;
-  box-shadow: 0 0 20px #FF4ECB;
-  max-width: 600px; /* Para que no se estire demasiado en escritorio */
-}
+
+    img.portada {
+      width: 100%;
+      height: auto;
+      max-width: 600px;
+      display: block;
+      margin: 0 auto 20px auto;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #FF4ECB;
+    }
 
     a.ubicacion {
       color: #FF4ECB;
@@ -70,6 +79,7 @@
       display: inline-block;
       margin-top: 10px;
     }
+
     .mensaje-rsvp {
       font-size: 1.2em;
       background-color: rgba(255, 255, 255, 0.3);
@@ -77,14 +87,42 @@
       border-radius: 15px;
       margin-top: 20px;
       max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
       color: #FF4ECB;
     }
+
     .mensaje-rsvp a {
       color: #25D366;
       font-weight: bold;
       text-decoration: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      body {
+        background-size: contain;
+        background-position: center top;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      .countdown {
+        font-size: 1.5em;
+      }
+
+      .mensaje-rsvp {
+        font-size: 1em;
+        padding: 10px;
+      }
+
+      img.portada {
+        max-width: 95%;
+      }
+
+      .container {
+        padding: 10px;
+      }
     }
   </style>
 </head>
@@ -110,7 +148,7 @@
       mándame un gritito por WhatsApp o una señal espeluznantemente fabulosa.<br>
       ¡Te espero! 💜🕷️<br><br>
 
-      <a href="https://wa.me/34611223344" target="_blank">
+      <a href="https://wa.me/34611198835" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30" style="vertical-align: middle;"/>
         Escríbeme por WhatsApp
       </a>
@@ -143,4 +181,3 @@
   </script>
 </body>
 </html>
-
