@@ -11,46 +11,47 @@
       box-sizing: border-box;
     }
 
-    body, html {
+    html, body {
+      width: 100%;
+      min-height: 100%;
       font-family: 'Comic Sans MS', cursive, sans-serif;
-  color: #FF4ECB;
-  background-image: url('fondo3.jpeg'); 
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-attachment: scroll;
+      color: #FF4ECB;
+    }
+
+    body {
+      background-color: #000;
+    }
 
     .fondo {
-      background-image: url('fondo3.jpeg');
+      background-image: url('fondo3.jpeg'); /* o fondo4.jpeg si es el nuevo */
       background-size: contain;
       background-repeat: no-repeat;
-      background-position: center top;
-      background-attachment: scroll;
-      width: 100vw;
+      background-position: top center;
+      width: 100%;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding-top: 20px;
     }
 
-    .container {
-      max-width: 600px;
+    .contenido {
+      max-width: 800px;
+      width: 100%;
       padding: 20px;
       text-align: center;
     }
 
     .portada {
-      width: 70%;
-      max-width: 220px;
+      width: 90%;
+      max-width: 300px;
       border-radius: 20px;
       box-shadow: 0 0 20px #FF4ECB;
-      margin: 30px auto;
-      display: block;
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: 2.2em;
-      margin: 10px 0;
+      font-size: 2.5em;
       animation: glow 2s infinite;
     }
 
@@ -68,37 +69,22 @@
     a {
       color: #FF4ECB;
       text-decoration: none;
-      display: inline-block;
-      margin-top: 10px;
-    }
-
-    audio {
-      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <div class="fondo">
-    <div class="container">
+    <div class="contenido">
       <img src="imagen.jpg" alt="Foto de Daniela" class="portada">
-
       <h1>¡Daniela cumple 7 años!</h1>
       <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
-
       <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
-
       <h2>📍 Detalles del evento</h2>
       <p><strong>Fecha:</strong> Junio 2025</p>
       <p><strong>Hora:</strong> 17:00 h</p>
       <p><strong>Lugar:</strong> Parque de bolas</p>
-
       <p><a href="https://www.google.com/maps" target="_blank">📍 Ver ubicación en Google Maps</a></p>
       <p><a href="https://wa.me/34661198835" target="_blank">💬 Escríbeme por WhatsApp</a></p>
-
-      <audio autoplay loop>
-        <source src="musica.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio HTML5.
-      </audio>
     </div>
   </div>
 
