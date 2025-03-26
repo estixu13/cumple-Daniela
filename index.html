@@ -78,7 +78,10 @@
     </footer>
   </div>
 
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
+    emailjs.init("4l7I9tZ4tDGLu_-lp"); // Tu Public Key
+
     const evento = new Date("2025-04-20T15:00:00").getTime();
 
     const cuentaRegresiva = setInterval(function() {
@@ -104,6 +107,16 @@
         document.getElementById("respuesta").textContent = "Por favor, escribe tu nombre.";
       } else {
         document.getElementById("respuesta").textContent = `¡Gracias por confirmar, ${nombre}! 🥳`;
+
+       
+        emailjs.send("service_d78f369", "template_ynixaq8", {
+          nombre: nombre,
+          email: "sylvitali@hotmail.com"
+        }).then(function(response) {
+          console.log("Correo enviado: ", response);
+        }, function(error) {
+          console.log("Error en el envío: ", error);
+        });
       }
     }
   </script>
