@@ -12,73 +12,80 @@
     }
 
     html, body {
+      height: 100%;
       width: 100%;
-      min-height: 100%;
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      color: #FF4ECB;
-    }
-
-    body {
-      background-color: #000;
-    }
-
-    .fondo {
-      background-image: url('fondo7.jpeg');
-      background-size: contain;
+      background-image: url('image.png'); /* Fondo con las Monster High */
+      background-size: cover;
+      background-position: center top;
       background-repeat: no-repeat;
-      background-position: top center;
-      width: 100%;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 20px;
+      background-attachment: scroll;
+      color: #FF69B4;
     }
 
     .contenido {
-      max-width: 800px;
-      width: 100%;
-      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
     }
 
     .portada {
       width: 90%;
-      max-width: 300px;
+      max-width: 250px;
       border-radius: 20px;
-      box-shadow: 0 0 20px #FF4ECB;
-      margin-bottom: 20px;
+      box-shadow: 0 0 25px #FF69B4;
+      margin-bottom: 30px;
     }
 
     h1 {
       font-size: 2.5em;
-      animation: glow 2s infinite;
-    }
-
-    @keyframes glow {
-      0% { text-shadow: 0 0 10px #fff; }
-      50% { text-shadow: 0 0 20px #FF4ECB; }
-      100% { text-shadow: 0 0 10px #fff; }
+      text-shadow: 0 0 5px #fff, 0 0 15px #FF69B4, 0 0 25px #FF1493;
+      margin-bottom: 10px;
     }
 
     .countdown {
       font-size: 1.5em;
       margin: 20px 0;
+      font-weight: bold;
+    }
+
+    .detalles {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 20px;
+      backdrop-filter: blur(2px);
     }
 
     a {
-      color: #FF4ECB;
+      color: #FF69B4;
+      font-weight: bold;
       text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 { font-size: 2em; }
+      .portada { max-width: 220px; }
     }
   </style>
 </head>
 <body>
-  <div class="fondo">
-    <div class="contenido">
-      <img src="imagen.jpg" alt="Foto de Daniela" class="portada">
-      <h1>¡Daniela cumple 7 años!</h1>
-      <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
-      <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
+  <div class="contenido">
+    <img src="imagen.jpg" alt="Foto de Daniela" class="portada">
+
+    <h1>¡Daniela cumple 7 años!</h1>
+    <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
+
+    <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
+
+    <div class="detalles">
       <h2>📍 Detalles del evento</h2>
       <p><strong>Fecha:</strong> Junio 2025</p>
       <p><strong>Hora:</strong> 17:00 h</p>
