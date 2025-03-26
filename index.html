@@ -10,7 +10,7 @@
       font-family: 'Comic Sans MS', cursive, sans-serif;
       background: url('fondo-dracu.png') no-repeat center top fixed;
       background-size: 100% 100%;
-      color: #f8c6f9;
+      color: #5C2D91; /* Morado fuerte */
       text-align: center;
     }
     .container {
@@ -21,37 +21,37 @@
     }
     h1 {
       font-size: 3em;
-      color: #ffffff;
-      text-shadow: 3px 3px 10px #ff4ecb;
+      color: #5C2D91;
+      text-shadow: 2px 2px 6px #fff;
       margin-top: 20px;
       animation: parpadeoColor 2s ease-in-out infinite;
     }
     @keyframes parpadeoColor {
       0% {
-        color: #ffffff;
-        text-shadow: 3px 3px 10px #ff4ecb;
+        color: #5C2D91;
+        text-shadow: 2px 2px 8px #ffffff;
         opacity: 1;
       }
       50% {
-        color: #ff4ecb;
-        text-shadow: 3px 3px 10px #ffffff;
+        color: #ffffff;
+        text-shadow: 2px 2px 10px #5C2D91;
         opacity: 0.6;
       }
       100% {
-        color: #ffffff;
-        text-shadow: 3px 3px 10px #ff4ecb;
+        color: #5C2D91;
+        text-shadow: 2px 2px 8px #ffffff;
         opacity: 1;
       }
     }
     .countdown {
       font-size: 2em;
       margin: 20px 0;
-      color: #ffffff;
+      color: #5C2D91;
     }
     footer {
       margin-top: 40px;
       font-size: 0.9em;
-      color: #f8c6f9;
+      color: #5C2D91;
     }
     img.portada {
       max-width: 90%;
@@ -60,20 +60,26 @@
       box-shadow: 0 0 20px #ff4ecb;
     }
     a.ubicacion {
-      color: #ff4ecb;
+      color: #5C2D91;
       text-decoration: underline;
       display: inline-block;
       margin-top: 10px;
     }
     .mensaje-rsvp {
       font-size: 1.2em;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(255, 255, 255, 0.5);
       padding: 15px;
       border-radius: 15px;
       margin-top: 20px;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+      color: #5C2D91;
+    }
+    .mensaje-rsvp a {
+      color: #25D366;
+      font-weight: bold;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -97,7 +103,12 @@
     <div class="mensaje-rsvp">
       💌 <strong>Confirma tu asistencia como toda una monstruita:</strong><br>
       mándame un gritito por WhatsApp o una señal espeluznantemente fabulosa.<br>
-      ¡Te espero! 💜🕷️
+      ¡Te espero! 💜🕷️<br><br>
+
+      <a href="https://wa.me/34611223344" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30" style="vertical-align: middle;"/>
+        Escríbeme por WhatsApp
+      </a>
     </div>
 
     <footer>
