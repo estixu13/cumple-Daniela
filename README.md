@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invitación de Daniela</title>
+  <title>Invitación de Daniela - Monster High</title>
   <style>
     body {
       margin: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      background-color: #f3e8ff;
-      color: #4b0082;
+      background-color: #1a1a1a;
+      color: #f8c6f9;
       text-align: center;
     }
     .container {
@@ -18,11 +18,13 @@
     }
     h1 {
       font-size: 3em;
-      margin-top: 30px;
+      color: #ff4ecb;
+      margin-top: 20px;
     }
     .countdown {
       font-size: 2em;
       margin: 20px 0;
+      color: #ffffff;
     }
     .rsvp input, .rsvp button {
       padding: 10px;
@@ -32,20 +34,29 @@
       border: none;
     }
     .rsvp button {
-      background-color: #d8b4f8;
+      background-color: #ff4ecb;
+      color: white;
       cursor: pointer;
     }
     footer {
       margin-top: 40px;
       font-size: 0.9em;
-      color: #6b21a8;
+      color: #f8c6f9;
+    }
+    img.portada {
+      max-width: 90%;
+      border-radius: 20px;
+      margin-top: 20px;
+      box-shadow: 0 0 20px #ff4ecb;
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <img class="portada" src="Imagen de WhatsApp 2025-03-26 a las 11.08.42_7fc9fd04.jpg" alt="Monster High Daniela">
+
     <h1>¡Daniela cumple 7 años!</h1>
-    <p>Estás invitado a una celebración muy especial 🎉</p>
+    <p>¡Estás invitado al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉</p>
 
     <div class="countdown" id="countdown">
       Cargando cuenta regresiva...
