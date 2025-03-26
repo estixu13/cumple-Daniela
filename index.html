@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Invitación de Daniela - Monster High</title>
+  <title>Invitación de Daniela</title>
   <style>
     * {
       margin: 0;
@@ -11,39 +11,43 @@
       box-sizing: border-box;
     }
 
-    body {
+    body, html {
+      height: 100%;
       font-family: 'Comic Sans MS', cursive, sans-serif;
       color: #FF4ECB;
+      background-color: #000;
+    }
+
+    .fondo {
       background-image: url('fondo3.jpeg');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center top;
-      background-attachment: fixed;
+      background-attachment: scroll;
+      width: 100vw;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+
+    .container {
+      max-width: 600px;
+      padding: 20px;
       text-align: center;
     }
 
-    .contenedor {
-      padding: 20px;
-      max-width: 800px;
-      width: 100%;
-      backdrop-filter: brightness(0.95);
-    }
-
     .portada {
-      width: 90vw;
-      max-width: 300px;
+      width: 70%;
+      max-width: 220px;
       border-radius: 20px;
       box-shadow: 0 0 20px #FF4ECB;
-      margin: 20px auto;
+      margin: 30px auto;
       display: block;
     }
 
     h1 {
-      font-size: 2.5em;
+      font-size: 2.2em;
       margin: 10px 0;
       animation: glow 2s infinite;
     }
@@ -72,26 +76,28 @@
   </style>
 </head>
 <body>
-  <div class="contenedor">
-    <img src="imagen.jpg" alt="Foto de Daniela" class="portada">
+  <div class="fondo">
+    <div class="container">
+      <img src="imagen.jpg" alt="Foto de Daniela" class="portada">
 
-    <h1>¡Daniela cumple 7 años!</h1>
-    <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
+      <h1>¡Daniela cumple 7 años!</h1>
+      <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
 
-    <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
+      <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
 
-    <h2>📍 Detalles del evento</h2>
-    <p><strong>Fecha:</strong> Junio 2025</p>
-    <p><strong>Hora:</strong> 17:00 h</p>
-    <p><strong>Lugar:</strong> Parque de bolas</p>
+      <h2>📍 Detalles del evento</h2>
+      <p><strong>Fecha:</strong> Junio 2025</p>
+      <p><strong>Hora:</strong> 17:00 h</p>
+      <p><strong>Lugar:</strong> Parque de bolas</p>
 
-    <p><a href="https://www.google.com/maps" target="_blank">📍 Ver ubicación en Google Maps</a></p>
-    <p><a href="https://wa.me/34661198835" target="_blank">💬 Escríbeme por WhatsApp</a></p>
+      <p><a href="https://www.google.com/maps" target="_blank">📍 Ver ubicación en Google Maps</a></p>
+      <p><a href="https://wa.me/34661198835" target="_blank">💬 Escríbeme por WhatsApp</a></p>
 
-    <audio autoplay loop>
-      <source src="musica.mp3" type="audio/mpeg">
-      Tu navegador no soporta audio HTML5.
-    </audio>
+      <audio autoplay loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+      </audio>
+    </div>
   </div>
 
   <script>
@@ -113,4 +119,3 @@
   </script>
 </body>
 </html>
-
