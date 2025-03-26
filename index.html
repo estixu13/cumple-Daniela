@@ -5,188 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Invitación de Daniela - Monster High</title>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
       background-color: #000;
-      color: #FF4ECB;
-      text-align: center;
       overflow-x: hidden;
+      text-align: center;
+      color: #FF4ECB;
     }
-
-    /* Fondo como imagen real */
-    .fondo-completo {
+    .fondo {
       position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
+      top: 0; left: 0;
       width: 100vw;
       height: 100vh;
       object-fit: cover;
+      z-index: -1;
     }
-
-    @media (max-width: 768px) {
-      .fondo-completo {
-        object-fit: contain;
-        background-color: black;
-      }
-    }
-
     .container {
-      width: 100%;
       max-width: 800px;
-      margin: 0 auto;
+      margin: auto;
       padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
-
-    h1 {
-      font-size: 3em;
-      color: #FF4ECB;
-      text-shadow: 2px 2px 6px #000;
-      margin-top: 20px;
-      animation: parpadeoColor 2s ease-in-out infinite;
-    }
-
-    @keyframes parpadeoColor {
-      0% {
-        color: #FF4ECB;
-        text-shadow: 2px 2px 10px #000;
-        opacity: 1;
-      }
-      50% {
-        color: #ffffff;
-        text-shadow: 2px 2px 10px #FF4ECB;
-        opacity: 0.6;
-      }
-      100% {
-        color: #FF4ECB;
-        text-shadow: 2px 2px 10px #000;
-        opacity: 1;
-      }
-    }
-
-    .countdown {
-      font-size: 2em;
-      margin: 20px 0;
-      color: #FF4ECB;
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #FF4ECB;
-    }
-
     img.portada {
       width: 100%;
       max-width: 600px;
-      height: auto;
-      display: block;
-      margin: 0 auto 20px auto;
       border-radius: 20px;
-      object-fit: contain;
       box-shadow: 0 0 20px #FF4ECB;
+      margin-bottom: 20px;
     }
-
-    a.ubicacion {
-      color: #FF4ECB;
-      text-decoration: underline;
-      display: inline-block;
-      margin-top: 10px;
+    h1 {
+      font-size: 2.5em;
+      animation: glow 2s infinite;
     }
-
-    .mensaje-rsvp {
-      font-size: 1.2em;
-      background-color: rgba(255, 255, 255, 0.3);
-      padding: 15px;
-      border-radius: 15px;
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #fff; }
+      50% { text-shadow: 0 0 20px #FF4ECB; }
+      100% { text-shadow: 0 0 10px #fff; }
+    }
+    .countdown {
+      font-size: 1.5em;
+      margin: 20px 0;
+    }
+    audio {
       margin-top: 20px;
-      max-width: 600px;
-      color: #FF4ECB;
-    }
-
-    .mensaje-rsvp a {
-      color: #25D366;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.2em;
-      }
-
-      .countdown {
-        font-size: 1.5em;
-      }
-
-      .mensaje-rsvp {
-        font-size: 1em;
-        padding: 10px;
-      }
-
-      img.portada {
-        max-width: 95%;
-      }
-
-      .container {
-        padding: 10px;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Fondo Monster High como imagen -->
-  <img class="fondo-completo" src="fondo2.jpeg" alt="Fondo Monster High" />
-
+  <img src="fondo2.jpeg" alt="Fondo Monster High" class="fondo">
   <div class="container">
-    <img class="portada" src="imagen.jpg" alt="Daniela Monster High">
-
+    <img src="imagen.jpg" alt="Daniela Monster High" class="portada">
     <h1>¡Daniela cumple 7 años!</h1>
     <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
-
     <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
-
-    <h2>📍 Detalles del evento</h2>
     <p><strong>Fecha:</strong> Junio 2025</p>
     <p><strong>Hora:</strong> 17:00 h</p>
     <p><strong>Lugar:</strong> Parque de bolas</p>
-    <a class="ubicacion" href="https://www.google.com/maps" target="_blank">📍 Ver ubicación en Google Maps</a>
-
-    <div class="mensaje-rsvp">
-      💌 <strong>Confirma tu asistencia como toda una monstruita:</strong><br>
-      mándame un gritito por WhatsApp o una señal espeluznantemente fabulosa.<br>
-      ¡Te espero! 💜🕷️<br><br>
+    <p><a href="https://www.google.com/maps" target="_blank">📍 Ver ubicación en Google Maps</a></p>
+    <p>
       <a href="https://wa.me/34661198835" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30" style="vertical-align: middle;"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="30" style="vertical-align: middle;">
         Escríbeme por WhatsApp
       </a>
-    </div>
-
-    <footer>Con cariño, Daniela 💜😘</footer>
+    </p>
+    <audio autoplay loop>
+      <source src="musica.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio HTML5.
+    </audio>
   </div>
-
   <script>
     const evento = new Date("2025-06-01T17:00:00").getTime();
-    const cuentaRegresiva = setInterval(function() {
+    const cuentaRegresiva = setInterval(() => {
       const ahora = new Date().getTime();
       const distancia = evento - ahora;
+      if (distancia < 0) {
+        clearInterval(cuentaRegresiva);
+        document.getElementById("countdown").innerText = "¡Ya comenzó la fiesta! 🎉";
+        return;
+      }
       const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
       const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
       const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-      document.getElementById("countdown").innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
-      if (distancia < 0) {
-        clearInterval(cuentaRegresiva);
-        document.getElementById("countdown").innerHTML = "¡Ya comenzó la fiesta! 🎉";
-      }
+      document.getElementById("countdown").innerText = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
     }, 1000);
   </script>
 </body>
