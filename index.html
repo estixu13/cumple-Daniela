@@ -8,8 +8,8 @@
     body {
       margin: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: url('fondo-dracu.png') no-repeat center center fixed;
-      background-size: cover;
+      background: url('fondo-dracu.png') no-repeat center top fixed;
+      background-size: 100% 100%;
       color: #f8c6f9;
       text-align: center;
     }
@@ -17,7 +17,7 @@
       padding: 20px;
       background-color: transparent;
       border-radius: 20px;
-      margin: 20px;
+      margin: 0;
     }
     h1 {
       font-size: 3em;
@@ -48,18 +48,6 @@
       margin: 20px 0;
       color: #ffffff;
     }
-    .rsvp input, .rsvp button {
-      padding: 10px;
-      font-size: 1em;
-      margin: 5px;
-      border-radius: 10px;
-      border: none;
-    }
-    .rsvp button {
-      background-color: #ff4ecb;
-      color: white;
-      cursor: pointer;
-    }
     footer {
       margin-top: 40px;
       font-size: 0.9em;
@@ -76,6 +64,16 @@
       text-decoration: underline;
       display: inline-block;
       margin-top: 10px;
+    }
+    .mensaje-rsvp {
+      font-size: 1.2em;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 15px;
+      border-radius: 15px;
+      margin-top: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
@@ -96,11 +94,10 @@
     <p><strong>Lugar:</strong> Parque de bolas</p>
     <a class="ubicacion" href="https://www.google.com/maps" target="_blank">📍 Ver ubicación en Google Maps</a>
 
-    <h2>💌 Confirma tu asistencia</h2>
-    <div class="rsvp">
-      <input type="text" placeholder="Tu nombre" id="nombre">
-      <button onclick="confirmarAsistencia()">Confirmar</button>
-      <p id="respuesta"></p>
+    <div class="mensaje-rsvp">
+      💌 <strong>Confirma tu asistencia como toda una monstruita:</strong><br>
+      mándame un gritito por WhatsApp o una señal espeluznantemente fabulosa.<br>
+      ¡Te espero! 💜🕷️
     </div>
 
     <footer>
@@ -108,10 +105,7 @@
     </footer>
   </div>
 
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    emailjs.init("4l7I9tZ4tDGLu_-lp");
-
     const evento = new Date("2025-06-01T17:00:00").getTime();
 
     const cuentaRegresiva = setInterval(function() {
@@ -130,24 +124,6 @@
         document.getElementById("countdown").innerHTML = "¡Ya comenzó la fiesta! 🎉";
       }
     }, 1000);
-
-    function confirmarAsistencia() {
-      const nombre = document.getElementById("nombre").value;
-      if (nombre.trim() === "") {
-        document.getElementById("respuesta").textContent = "Por favor, escribe tu nombre.";
-      } else {
-        document.getElementById("respuesta").textContent = `¡Gracias por confirmar, ${nombre}! 🥳`;
-
-        emailjs.send("service_d78f369", "template_ynixaq8", {
-          nombre: nombre,
-          email: "sylvitali@hotmail.com"
-        }).then(function(response) {
-          console.log("Correo enviado: ", response);
-        }, function(error) {
-          console.log("Error en el envío: ", error);
-        });
-      }
-    }
   </script>
 </body>
 </html>
