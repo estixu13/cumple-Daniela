@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Invitación de Daniela - Monster High</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
       background: url('fondo2.jpeg') no-repeat center center fixed;
-      background-size: contain;
+      background-size: cover;
       background-color: #000;
       color: #FF4ECB;
       text-align: center;
@@ -66,11 +70,12 @@
     img.portada {
       width: 100%;
       height: auto;
-      max-width: 600px;
       display: block;
       margin: 0 auto 20px auto;
       border-radius: 20px;
       box-shadow: 0 0 20px #FF4ECB;
+      max-width: 500px;
+      object-fit: contain;
     }
 
     a.ubicacion {
@@ -96,15 +101,9 @@
       text-decoration: none;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
-      body {
-        background-size: contain;
-        background-position: center top;
-      }
-
       h1 {
-        font-size: 2em;
+        font-size: 2.2em;
       }
 
       .countdown {
@@ -148,7 +147,7 @@
       mándame un gritito por WhatsApp o una señal espeluznantemente fabulosa.<br>
       ¡Te espero! 💜🕷️<br><br>
 
-      <a href="https://wa.me/34611223344" target="_blank">
+      <a href="https://wa.me/34661198835" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30" style="vertical-align: middle;"/>
         Escríbeme por WhatsApp
       </a>
