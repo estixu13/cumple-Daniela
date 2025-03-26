@@ -15,12 +15,13 @@
       height: 100%;
       width: 100%;
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      background-image: url('fondo7.jpg');
-      background-size: cover;
-      background-position: center top;
+      background-image: url('image.png');
+      background-size: 100% auto;
       background-repeat: no-repeat;
-      background-attachment: scroll;
-      color: #FF69B4;
+      background-position: top center;
+      background-color: #ff69b4; /* color de fondo si imagen no carga */
+      color: #ff66cc;
+      line-height: 1.6;
     }
 
     .contenido {
@@ -43,25 +44,40 @@
 
     h1 {
       font-size: 2.5em;
-      text-shadow: 0 0 5px #fff, 0 0 15px #FF69B4, 0 0 25px #FF1493;
+      text-shadow: 0 0 5px #fff, 0 0 15px #FF69B4;
       margin-bottom: 10px;
+      animation: parpadeo 1.8s infinite;
+    }
+
+    @keyframes parpadeo {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
     }
 
     .countdown {
       font-size: 1.5em;
       margin: 20px 0;
       font-weight: bold;
+      text-shadow: 0 0 5px #fff;
     }
 
     .detalles {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(0, 0, 0, 0.6);
       padding: 20px;
       border-radius: 20px;
-      backdrop-filter: blur(2px);
+      width: 90%;
+      max-width: 600px;
+      margin-top: 20px;
+      color: #ffccff;
+    }
+
+    .detalles h2 {
+      color: #ff66cc;
+      margin-bottom: 10px;
     }
 
     a {
-      color: #FF69B4;
+      color: #ff66cc;
       font-weight: bold;
       text-decoration: none;
     }
