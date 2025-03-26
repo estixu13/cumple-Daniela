@@ -3,85 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Invitación de Daniela</title>
+  <title>Invitación Monster High - Daniela</title>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: #000;
-      background-image: url('fondo10.jpg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: top right;
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      color: #ff66cc;
-      line-height: 1.8;
-    }
-
-    .fondo-negro {
-      background-image: url('fondo11.jpg');
-      background-size: cover;
-      background-repeat: repeat-y;
-      background-position: center;
-    }
-
-    .foto-marco {
-      width: 100%;
-      height: auto;
-      padding-top: 80px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .foto-marco img {
-      width: 300px;
-      max-width: 80vw;
-      border-radius: 15px;
-      box-shadow: 0 0 25px #ff66cc;
-    }
-
-    .contenido {
-      padding: 60px 20px 40px;
+      background-color: #1a1a1a;
+      background-image: linear-gradient(to bottom, #1a1a1a, #000);
+      color: #f7c0f9;
       text-align: center;
     }
 
-    h1 {
-      font-size: 2.5em;
-      color: #ff66cc;
-      text-shadow: 0 0 5px #fff, 0 0 15px #FF69B4, 0 0 25px #ff00ff;
-      animation: parpadeo 1.8s infinite;
+    .header {
+      background-image: url('https://i.imgur.com/hZ7VbA5.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .header img {
+      width: 280px;
+      max-width: 90vw;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #ff00cc;
       margin-bottom: 20px;
     }
 
-    @keyframes parpadeo {
+    h1 {
+      font-size: 2.8em;
+      color: #ff66cc;
+      animation: blink 2s infinite;
+      text-shadow: 0 0 8px #fff, 0 0 20px #ff66cc;
+      margin-bottom: 0.5em;
+    }
+
+    @keyframes blink {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
+      50% { opacity: 0.6; }
+    }
+
+    .contenido {
+      padding: 40px 20px;
+    }
+
+    .contenido p {
+      font-size: 1.2em;
+      color: #ffc8f8;
+      margin-bottom: 1.5em;
     }
 
     .countdown {
-      font-size: 1.4em;
-      margin: 20px 0;
-      font-weight: bold;
-      text-shadow: 0 0 5px #fff;
+      font-size: 1.5em;
+      color: #fff;
+      text-shadow: 0 0 10px #ff00cc;
     }
 
     .detalles {
-      color: #ffe0f5;
-      margin-top: 30px;
-    }
-
-    .detalles h2 {
-      color: #ff66cc;
-      margin-bottom: 10px;
+      margin-top: 2em;
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #ffe0f9;
     }
 
     a {
       color: #ff99dd;
-      font-weight: bold;
       text-decoration: none;
     }
 
@@ -91,24 +82,21 @@
   </style>
 </head>
 <body>
-  <div class="fondo-negro">
-    <div class="foto-marco">
-      <img src="imagen.jpg" alt="Foto de Daniela">
-    </div>
+  <div class="header">
+    <img src="imagen.jpg" alt="Foto Daniela">
+    <h1>¡Daniela cumple 7 años!</h1>
+  </div>
 
-    <div class="contenido">
-      <h1>¡Daniela cumple 7 años!</h1>
-      <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
-      <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
+  <div class="contenido">
+    <p>¡Estás invitad@ a una fiesta <strong>monstruosamente divertida</strong>! 💀🎉🎂</p>
+    <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
 
-      <div class="detalles">
-        <h2>📍 Detalles del evento</h2>
-        <p><strong>Fecha:</strong> Junio 2025</p>
-        <p><strong>Hora:</strong> 17:00 h</p>
-        <p><strong>Lugar:</strong> Parque de bolas</p>
-        <p><a href="https://www.google.com/maps" target="_blank">📍 Ver ubicación en Google Maps</a></p>
-        <p><a href="https://wa.me/34661198835" target="_blank">💬 Escríbeme por WhatsApp</a></p>
-      </div>
+    <div class="detalles">
+      <p><strong>🗓 Fecha:</strong> Junio 2025</p>
+      <p><strong>🕔 Hora:</strong> 17:00 h</p>
+      <p><strong>📍 Lugar:</strong> Parque de bolas</p>
+      <p><a href="https://www.google.com/maps" target="_blank">🔎 Ver ubicación en Google Maps</a></p>
+      <p><a href="https://wa.me/34661198835" target="_blank">💌 Confirma por WhatsApp</a></p>
     </div>
   </div>
 
@@ -131,3 +119,4 @@
   </script>
 </body>
 </html>
+
