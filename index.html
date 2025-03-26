@@ -3,48 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Invitación de Daniela</title>
+  <title>Invitación de Daniela - Monster High</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    body, html {
-      height: 100%;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-    }
 
     body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #FF4ECB;
       background-image: url('fondo3.jpeg');
-      background-size: cover;
-      background-position: center;
+      background-size: contain;
       background-repeat: no-repeat;
+      background-position: center top;
+      background-attachment: fixed;
+      min-height: 100vh;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      text-align: center;
     }
 
     .contenedor {
-      text-align: center;
-      color: #FF4ECB;
       padding: 20px;
-      background-color: rgba(0, 0, 0, 0.5); /* fondo semitransparente opcional */
-      border-radius: 20px;
-      max-width: 90%;
+      max-width: 800px;
+      width: 100%;
+      backdrop-filter: brightness(0.95);
     }
 
     .portada {
       width: 90vw;
       max-width: 300px;
-      height: auto;
       border-radius: 20px;
       box-shadow: 0 0 20px #FF4ECB;
-      margin-bottom: 20px;
+      margin: 20px auto;
+      display: block;
     }
 
     h1 {
-      font-size: 2em;
+      font-size: 2.5em;
+      margin: 10px 0;
       animation: glow 2s infinite;
     }
 
@@ -53,13 +53,64 @@
       50% { text-shadow: 0 0 20px #FF4ECB; }
       100% { text-shadow: 0 0 10px #fff; }
     }
+
+    .countdown {
+      font-size: 1.5em;
+      margin: 20px 0;
+    }
+
+    a {
+      color: #FF4ECB;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    audio {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
   <div class="contenedor">
-    <img src="imagen.jpg" alt="Daniela Monster High" class="portada">
+    <img src="imagen.jpg" alt="Foto de Daniela" class="portada">
+
     <h1>¡Daniela cumple 7 años!</h1>
-    <p>¡Estás invitad@ a su fiesta más monstruosamente fabulosa! 🎉💀</p>
+    <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
+
+    <div class="countdown" id="countdown">Cargando cuenta regresiva...</div>
+
+    <h2>📍 Detalles del evento</h2>
+    <p><strong>Fecha:</strong> Junio 2025</p>
+    <p><strong>Hora:</strong> 17:00 h</p>
+    <p><strong>Lugar:</strong> Parque de bolas</p>
+
+    <p><a href="https://www.google.com/maps" target="_blank">📍 Ver ubicación en Google Maps</a></p>
+    <p><a href="https://wa.me/34661198835" target="_blank">💬 Escríbeme por WhatsApp</a></p>
+
+    <audio autoplay loop>
+      <source src="musica.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio HTML5.
+    </audio>
   </div>
+
+  <script>
+    const evento = new Date("2025-06-01T17:00:00").getTime();
+    const cuentaRegresiva = setInterval(() => {
+      const ahora = new Date().getTime();
+      const distancia = evento - ahora;
+      if (distancia < 0) {
+        clearInterval(cuentaRegresiva);
+        document.getElementById("countdown").innerText = "¡Ya comenzó la fiesta! 🎉";
+        return;
+      }
+      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+      document.getElementById("countdown").innerText = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+    }, 1000);
+  </script>
 </body>
 </html>
+
