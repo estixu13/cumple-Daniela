@@ -1,4 +1,3 @@
-# cumple-Daniela
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -53,7 +52,7 @@
 </head>
 <body>
   <div class="container">
-    <img class="portada" src="cumpleD.JPG" alt="Monster High Daniela">
+    <img class="portada" src="cumpleD.jpg" alt="Monster High Daniela">
 
     <h1>¡Daniela cumple 7 años!</h1>
     <p>¡Estás invitado al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉</p>
