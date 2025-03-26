@@ -15,17 +15,32 @@
     .container {
       padding: 20px;
     }
-    h1 {
-      font-size: 3em;
-      color: #ffffff;
-      text-shadow: 2px 2px 6px #000000;
-      margin-top: 20px;
-      animation: brilloSuave 2s ease-in-out infinite;
-    }
-    @keyframes brilloSuave {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
+ h1 {
+  font-size: 3em;
+  color: #ffffff;
+  text-shadow: 3px 3px 10px #ff4ecb;
+  margin-top: 20px;
+  animation: parpadeoColor 2s ease-in-out infinite;
+}
+
+@keyframes parpadeoColor {
+  0% {
+    color: #ffffff;
+    text-shadow: 3px 3px 10px #ff4ecb;
+    opacity: 1;
+  }
+  50% {
+    color: #ff4ecb;
+    text-shadow: 3px 3px 10px #ffffff;
+    opacity: 0.6;
+  }
+  100% {
+    color: #ffffff;
+    text-shadow: 3px 3px 10px #ff4ecb;
+    opacity: 1;
+  }
+}
+
     .countdown {
       font-size: 2em;
       margin: 20px 0;
