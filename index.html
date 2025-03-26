@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: url('https://i.imgur.com/MFFzw0F.png') no-repeat center center fixed;
+      background: url('https://i.imgur.com/jJkknDc.png') no-repeat center center fixed;
       background-size: cover;
       color: #f8c6f9;
       text-align: center;
@@ -75,7 +75,7 @@
     <img class="portada" src="imagen.jpg" alt="Daniela Monster High">
 
     <h1>¡Daniela cumple 7 años!</h1>
-    <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂 </p>
+    <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
 
     <div class="countdown" id="countdown">
       Cargando cuenta regresiva...
@@ -95,12 +95,12 @@
     </div>
 
     <div class="monster-girls">
-      <img src="https://i.imgur.com/SdA3P5f.png" alt="Frankie Stein">
-      <img src="https://i.imgur.com/K7FwAoX.png" alt="Draculaura">
-      <img src="https://i.imgur.com/dUix05l.png" alt="Clawdeen Wolf">
-      <img src="https://i.imgur.com/UgAY6qg.png" alt="Cleo de Nile">
-      <img src="https://i.imgur.com/8AHGzLs.png" alt="Lagoona Blue">
-      <img src="https://i.imgur.com/hMoL5Kk.png" alt="Ghoulia Yelps">
+      <img src="https://i.imgur.com/7jKLwn7.png" alt="Frankie Stein">
+      <img src="https://i.imgur.com/LoSxNaY.png" alt="Draculaura">
+      <img src="https://i.imgur.com/9VY4hzT.png" alt="Clawdeen Wolf">
+      <img src="https://i.imgur.com/54WBXxD.png" alt="Cleo de Nile">
+      <img src="https://i.imgur.com/ZroqaUZ.png" alt="Lagoona Blue">
+      <img src="https://i.imgur.com/jGvJYXE.png" alt="Ghoulia Yelps">
     </div>
 
     <footer>
@@ -110,4 +110,44 @@
 
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    emailjs
+    emailjs.init("4l7I9tZ4tDGLu_-lp");
+
+    const evento = new Date("2025-06-01T17:00:00").getTime();
+
+    const cuentaRegresiva = setInterval(function() {
+      const ahora = new Date().getTime();
+      const distancia = evento - ahora;
+
+      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+
+      if (distancia < 0) {
+        clearInterval(cuentaRegresiva);
+        document.getElementById("countdown").innerHTML = "¡Ya comenzó la fiesta! 🎉";
+      }
+    }, 1000);
+
+    function confirmarAsistencia() {
+      const nombre = document.getElementById("nombre").value;
+      if (nombre.trim() === "") {
+        document.getElementById("respuesta").textContent = "Por favor, escribe tu nombre.";
+      } else {
+        document.getElementById("respuesta").textContent = `¡Gracias por confirmar, ${nombre}! 🥳`;
+
+        emailjs.send("service_d78f369", "template_ynixaq8", {
+          nombre: nombre,
+          email: "sylvitali@hotmail.com"
+        }).then(function(response) {
+          console.log("Correo enviado: ", response);
+        }, function(error) {
+          console.log("Error en el envío: ", error);
+        });
+      }
+    }
+  </script>
+</body>
+</html>
