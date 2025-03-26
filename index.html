@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Invitación de Daniela - Monster High</title>
   <style>
     body {
       margin: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      background-color: #1a1a1a;
+      background: url('https://i.imgur.com/MFFzw0F.png') no-repeat center center fixed;
+      background-size: cover;
       color: #f8c6f9;
       text-align: center;
     }
     .container {
       padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      margin: 20px;
     }
     h1 {
       font-size: 3em;
-      color: #ff4ecb;
+      color: #ffffff;
+      text-shadow: 2px 2px 6px #000000;
       margin-top: 20px;
+      animation: brilloSuave 2s ease-in-out infinite;
+    }
+    @keyframes brilloSuave {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
     }
     .countdown {
       font-size: 2em;
@@ -48,6 +58,16 @@
       margin-top: 20px;
       box-shadow: 0 0 20px #ff4ecb;
     }
+    .monster-girls img {
+      width: 120px;
+      margin: 10px;
+    }
+    a.ubicacion {
+      color: #ff4ecb;
+      text-decoration: underline;
+      display: inline-block;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -62,9 +82,10 @@
     </div>
 
     <h2>📍 Detalles del evento</h2>
-    <p><strong>Fecha:</strong> Próximamente</p>
-    <p><strong>Hora:</strong> Próximamente</p>
-    <p><strong>Lugar:</strong> Próximamente</p>
+    <p><strong>Fecha:</strong> Junio 2025</p>
+    <p><strong>Hora:</strong> 17:00 h</p>
+    <p><strong>Lugar:</strong> Parque de bolas</p>
+    <a class="ubicacion" href="https://www.google.com/maps" target="_blank">📍 Ver ubicación en Google Maps</a>
 
     <h2>💌 Confirma tu asistencia</h2>
     <div class="rsvp">
@@ -73,52 +94,20 @@
       <p id="respuesta"></p>
     </div>
 
+    <div class="monster-girls">
+      <img src="https://i.imgur.com/SdA3P5f.png" alt="Frankie Stein">
+      <img src="https://i.imgur.com/K7FwAoX.png" alt="Draculaura">
+      <img src="https://i.imgur.com/dUix05l.png" alt="Clawdeen Wolf">
+      <img src="https://i.imgur.com/UgAY6qg.png" alt="Cleo de Nile">
+      <img src="https://i.imgur.com/8AHGzLs.png" alt="Lagoona Blue">
+      <img src="https://i.imgur.com/hMoL5Kk.png" alt="Ghoulia Yelps">
+    </div>
+
     <footer>
-      Con cariño, Daniela 💜
+      Con cariño, Daniela 💜😘
     </footer>
   </div>
 
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    emailjs.init("4l7I9tZ4tDGLu_-lp"); // Tu Public Key
-
-    const evento = new Date("2025-04-20T15:00:00").getTime();
-
-    const cuentaRegresiva = setInterval(function() {
-      const ahora = new Date().getTime();
-      const distancia = evento - ahora;
-
-      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown").innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
-
-      if (distancia < 0) {
-        clearInterval(cuentaRegresiva);
-        document.getElementById("countdown").innerHTML = "¡Ya comenzó la fiesta! 🎉";
-      }
-    }, 1000);
-
-    function confirmarAsistencia() {
-      const nombre = document.getElementById("nombre").value;
-      if (nombre.trim() === "") {
-        document.getElementById("respuesta").textContent = "Por favor, escribe tu nombre.";
-      } else {
-        document.getElementById("respuesta").textContent = `¡Gracias por confirmar, ${nombre}! 🥳`;
-
-       
-        emailjs.send("service_d78f369", "template_ynixaq8", {
-          nombre: nombre,
-          email: "sylvitali@hotmail.com"
-        }).then(function(response) {
-          console.log("Correo enviado: ", response);
-        }, function(error) {
-          console.log("Error en el envío: ", error);
-        });
-      }
-    }
-  </script>
-</body>
-</html>
+    emailjs
