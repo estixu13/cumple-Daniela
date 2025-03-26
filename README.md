@@ -79,7 +79,6 @@
   </div>
 
   <script>
-    // Fecha del evento (ajusta cuando tengas la fecha real)
     const evento = new Date("2025-04-20T15:00:00").getTime();
 
     const cuentaRegresiva = setInterval(function() {
