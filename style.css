@@ -5,7 +5,7 @@ body {
   color: #FF4ECB;
   text-align: center;
   background-color: black;
-  overflow: hidden; /* evita que se desborde fuera del fondo */
+  overflow: hidden; 
 }
 
 .fondo {
@@ -22,7 +22,7 @@ body {
 /* Caja perfectamente encajada dentro del área negra del fondo */
 .container {
   width: 360px;
-  height: 640px; /* igual al alto del fondo visible en móvil */
+  height: 640px; 
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
