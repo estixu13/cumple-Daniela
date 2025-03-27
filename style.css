@@ -29,7 +29,9 @@ body {
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,7 +55,7 @@ h1 {
 h2.detalles-evento {
   font-size: 1.4rem;
   margin-top: 20px;
-  color: #BB33FF; 
+  color: #BB33FF;
   animation: parpadeoColores 3s infinite;
 }
 
@@ -62,7 +64,7 @@ p, .countdown {
 }
 
 a.ubicacion {
-  color: #BB33FF; 
+  color: #BB33FF;
   font-size: 1.2rem;
   font-weight: bold;
   text-decoration: underline;
@@ -76,10 +78,31 @@ footer {
 }
 
 footer .corazon-parpadeante {
-  font-size: 4rem; 
+  font-size: 6rem;
   display: block;
   margin: 10px auto;
   animation: parpadeoColores 2s infinite;
+}
+
+.boton-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #25D366, #1ebe57);
+  color: white !important;
+  padding: 14px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  text-decoration: none;
+  box-shadow: 0 0 20px #25D366, 0 0 40px #25D366;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.boton-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #25D366, 0 0 60px #25D366;
 }
 
 @keyframes parpadeoColores {
@@ -94,3 +117,4 @@ footer .corazon-parpadeante {
   50% { color: #fff; opacity: 0.6; }
   100% { color: #FF4ECB; opacity: 1; }
 }
+
