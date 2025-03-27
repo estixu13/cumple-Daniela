@@ -25,7 +25,7 @@ body {
 
 .container {
   width: 90%;
-  max-width: 260px; 
+  max-width: 260px;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
@@ -52,7 +52,7 @@ h1, h2, p, .countdown, .mensaje-rsvp, footer {
 
 h1 {
   font-size: 2rem;
-  animation: parpadeoColor 2s ease-in-out infinite; 
+  animation: parpadeoColor 2s ease-in-out infinite;
 }
 
 h2 {
@@ -70,13 +70,33 @@ footer {
   color: #FF4ECB;
 }
 
+
 a.morado-brillante {
-  color: #D291FF;
+  color: #D291FF !important;
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: none !important;
   animation: parpadeoColor 2s ease-in-out infinite;
 }
-/
+
+
+a.boton-whatsapp {
+  display: inline-block;
+  background-color: #25D366;
+  color: white !important;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-decoration: none;
+  box-shadow: 0 0 10px #25D366;
+  transition: transform 0.2s ease-in-out;
+}
+
+a.boton-whatsapp:hover {
+  transform: scale(1.05);
+}
+
+
 @keyframes parpadeoColor {
   0% { color: #FF4ECB; }
   50% { color: #ffffff; }
