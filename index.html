@@ -39,6 +39,14 @@
     <p><strong>Lugar:</strong> Parque de bolas</p>
     <a class="ubicacion" href="https://www.google.com/maps" target="_blank">📍 Ver ubicación en Google Maps</a>
 
+    <!-- BOTÓN WHATSAPP -->
+    <div class="whatsapp-container">
+      <p class="mensaje-whatsapp">¿Vienes? 💬 ¡Confirma tu asistencia por WhatsApp!</p>
+      <a href="https://wa.me/34661198835" target="_blank" class="boton-whatsapp">
+        ✅ Confirmar asistencia
+      </a>
+    </div>
+
     <footer>
       <p>Con cariño, Daniela</p>
       <span class="corazon-parpadeante">💜</span>
@@ -50,8 +58,8 @@
     const iframeMusica = document.getElementById('musicaFrame');
 
     botonMusica.addEventListener('click', () => {
-      iframeMusica.src += '&autoplay=1'; // Activo la música
-      botonMusica.style.display = 'none'; // Oculto el botón después de hacer clic
+      iframeMusica.src += '&autoplay=1';
+      botonMusica.style.display = 'none';
     });
 
     const evento = new Date("2025-06-01T17:00:00").getTime();
