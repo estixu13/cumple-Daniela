@@ -20,26 +20,22 @@ body {
   z-index: -1;
 }
 
-/* contenedor con fondo suave negro */
 .container {
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.6); /* ← este es el fondo negro semitransparente perfecto */
-  border-radius: 20px;
+  background-color: transparent;
   margin: 0 auto;
   max-width: 90vw;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* sombra para dar profundidad */
 }
 
-h1, h2, p {
-  line-height: 1.6;
-  text-shadow: 1px 1px 3px #000; /* ¡esto ayuda muchísimo a la legibilidad! */
+h1, h2, p, .countdown, .mensaje-rsvp, footer {
+  text-shadow: 2px 2px 4px #000;
 }
 
 h1 {
   font-size: 6vw;
   color: #FF4ECB;
-  animation: parpadeoColor 2s ease-in-out infinite;
   margin-top: 20px;
+  animation: parpadeoColor 2s ease-in-out infinite;
 }
 
 h2 {
@@ -69,12 +65,10 @@ p, .countdown {
     color: #FF4ECB;
     opacity: 1;
   }
-
   50% {
     color: #fff;
     opacity: 0.6;
   }
-
   100% {
     color: #FF4ECB;
     opacity: 1;
@@ -83,13 +77,11 @@ p, .countdown {
 
 .countdown {
   margin: 20px 0;
-  color: #FF4ECB;
 }
 
 footer {
   margin-top: 40px;
   font-size: 0.9em;
-  color: #FF4ECB;
 }
 
 img.portada {
@@ -111,16 +103,11 @@ a.ubicacion {
 
 .mensaje-rsvp {
   font-size: 1.2em;
-  background-color: rgba(255, 255, 255, 0.1);
   padding: 15px;
-  border-radius: 15px;
   margin-top: 20px;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  color: #FF4ECB;
-  backdrop-filter: blur(1px);
-  text-shadow: 1px 1px 2px #000;
 }
 
 .mensaje-rsvp a {
