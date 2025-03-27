@@ -18,14 +18,14 @@ body {
   width: 100vw;
   height: 100vh;
   background: url('fondo8.png') no-repeat center top;
-  background-size: cover;
+  background-size: cover; 
   background-attachment: scroll;
   z-index: -1;
 }
 
 .container {
-  width: 90%;
-  max-width: 260px;
+  width: 70%; 
+  max-width: 300px;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
@@ -33,16 +33,16 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 150vh;
+  min-height: 150vh; 
 }
 
 img.portada {
-  width: 80%;
-  max-width: 240px;
+  width: 80%; 
+  max-width: 220px; 
   height: auto;
   border-radius: 20px;
   box-shadow: 0 0 20px #FF4ECB;
-  margin-top: 50px;
+  margin-top: 50px; 
 }
 
 h1, h2, p, .countdown, .mensaje-rsvp, footer {
@@ -64,49 +64,21 @@ p, .countdown, .mensaje-rsvp {
   font-size: 1rem;
 }
 
+a.ubicacion, .mensaje-rsvp a {
+  color: #BB33FF; 
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 footer {
   margin-top: 50px;
   font-size: 1em;
   color: #FF4ECB;
 }
 
-a.morado-brillante {
-  color: #D291FF !important;
-  font-weight: bold;
-  text-decoration: none !important;
-  animation: parpadeoColor 2s ease-in-out infinite;
-}
-
-a.boton-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #25D366, #1ebe57);
-  color: white !important;
-  padding: 14px 24px;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-top: 20px;
-  text-decoration: none;
-  box-shadow: 0 0 20px #25D366, 0 0 40px #25D366;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-}
-
-a.boton-whatsapp:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 30px #25D366, 0 0 60px #25D366;
-}
-
-.corazon-parpadeante {
-  font-size: 6rem;
-  animation: parpadeoColor 1.5s ease-in-out infinite;
-  margin-top: 20px;
-}
-
 @keyframes parpadeoColor {
-  0%   { color: #FF4ECB; }
-  33%  { color: #FFFFFF; }
-  66%  { color: #D291FF; }
-  100% { color: #FF4ECB; }
+  0% { color: #FF4ECB; opacity: 1; }
+  50% { color: #fff; opacity: 0.6; }
+  100% { color: #FF4ECB; opacity: 1; }
 }
