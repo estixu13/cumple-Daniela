@@ -20,8 +20,13 @@ body {
   z-index: -1;
 }
 
-background-color: transparent;
-
+/* Estilo limpio para el contenido */
+.container {
+  padding: 20px;
+  background-color: transparent; /* Fondo transparente real */
+  margin: 0 auto;
+  max-width: 90vw;
+}
 
 h1, h2, p {
   line-height: 1.6;
@@ -107,7 +112,7 @@ a.ubicacion {
 
 .mensaje-rsvp {
   font-size: 1.2em;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.15); /* Más suave */
   padding: 15px;
   border-radius: 15px;
   margin-top: 20px;
@@ -115,6 +120,7 @@ a.ubicacion {
   margin-left: auto;
   margin-right: auto;
   color: #FF4ECB;
+  backdrop-filter: blur(2px); /* Efecto ligero de desenfoque */
 }
 
 .mensaje-rsvp a {
