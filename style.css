@@ -1,126 +1,90 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Chewy', 'Comic Sans MS', cursive, sans-serif;
-  color: #FF4ECB;
-  text-align: center;
-  background-color: black;
-  overflow-x: hidden;
-  overflow-y: auto;
-  min-height: 100vh;
-  position: relative;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación de Daniela - Monster High</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+</head>
+<body>
 
-.fondo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url('fondo8.png') no-repeat center top;
-  background-size: cover;
-  background-attachment: scroll;
-  z-index: -1;
-}
+  <!-- BOTÓN PARA ACTIVAR MÚSICA -->
+  <div class="boton-container">
+    <button id="activarMusica" class="boton-musica">
+      👻 Toca aquí y deja que la diversión comience 🎶
+    </button>
+  </div>
+  <div style="position: absolute; width: 1px; height: 1px; overflow: hidden;">
+    <iframe id="musicaFrame" width="1" height="1" 
+      src="https://www.youtube.com/embed/nGawAhRjtoA?loop=1&playlist=nGawAhRjtoA" 
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>
 
-.container {
-  width: 70%;
-  max-width: 300px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 150vh;
-}
+  <div class="fondo"></div>
+  <div class="container">
+    <img class="portada" src="imagen.jpg" alt="Daniela Monster High">
 
-img.portada {
-  width: 80%;
-  max-width: 240px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 0 20px #FF4ECB;
-  margin-top: 50px;
-}
+    <h1>¡Daniela cumple 7 años!</h1>
+    <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
 
-h1 {
-  font-size: 3rem; /* Tamaño grande */
-  color: #FF4ECB; /* Color inicial */
-  text-shadow: none; /* Elimino sombras */
-  animation: cambioColor 3s infinite; /* Animación */
-  font-weight: bold;
-  margin-bottom: 20px;
-}
+    <div class="countdown" id="countdown">
+      Cargando cuenta regresiva...
+    </div>
 
-@keyframes cambioColor {
-  0% { color: #FF69B4; }   /* Rosa */
-  33% { color: #FFFFFF; }  /* Blanco */
-  66% { color: #BB33FF; }  /* Morado */
-  100% { color: #FF69B4; } /* Vuelvo al rosa */
-}
+    <h2 class="detalles-evento">📍 Detalles del evento</h2>
+    <p><strong>Fecha:</strong> Junio 2025</p>
+    <p><strong>Hora:</strong> 17:00 h</p>
+    <p><strong>Lugar:</strong> Parque de bolas</p>
+    <a class="ubicacion" href="https://www.google.com/maps" target="_blank">📍 Ver ubicación en Google Maps</a>
 
-h2.detalles-evento {
-  font-size: 1.4rem;
-  margin-top: 20px;
-  color: #BB33FF; /* Color morado */
-  animation: parpadeoColores 3s infinite; /* Animación dinámica */
-}
+    <!-- BOTÓN WHATSAPP -->
+    <div class="whatsapp-container">
+      <p class="mensaje-whatsapp">¿Vienes? 💬 ¡Confirma tu asistencia por WhatsApp!</p>
+      <a href="https://wa.me/34661198835" target="_blank" class="boton-whatsapp">
+        ✅ Confirmar asistencia
+      </a>
+    </div>
 
-p, .countdown {
-  font-size: 1rem;
-}
+    <footer>
+      <p>Con cariño, Daniela</p>
+      <span class="corazon-parpadeante">💜</span>
+    </footer>
+  </div>
 
-a.ubicacion {
-  color: #BB33FF;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-decoration: underline;
-}
+  <script>
+    const botonMusica = document.getElementById('activarMusica');
+    const iframeMusica = document.getElementById('musicaFrame');
 
-footer {
-  margin-top: 50px;
-  font-size: 1em;
-  color: #FF4ECB;
-  text-align: center;
-}
+    botonMusica.addEventListener('click', () => {
+      iframeMusica.src += '&autoplay=1';
+      botonMusica.style.display = 'none';
+    });
 
-footer .corazon-parpadeante {
-  font-size: 6rem;
-  display: block;
-  margin: 10px auto;
-  animation: parpadeoColores 2s infinite;
-}
+    const evento = new Date("2025-06-01T17:00:00").getTime();
+    const cuentaRegresiva = setInterval(function () {
+      const ahora = new Date().getTime();
+      const distancia = evento - ahora;
 
-.boton-container {
-  text-align: center;
-  margin-top: 20px;
-}
+      if (distancia < 0) {
+        clearInterval(cuentaRegresiva);
+        document.getElementById("countdown").innerHTML = "¡Ya comenzó la fiesta! 🎉";
+        return;
+      }
 
-.boton-musica {
-  background-color: #FF69B4; /* Rosa color */
-  color: white;
-  padding: 15px 25px;
-  font-size: 20px;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 0 15px #FF69B4, 0 0 30px #BB33FF; /* Efecto brillante */
-  transition: transform 0.3s, box-shadow 0.3s;
-}
+      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
-.boton-musica:hover {
-  transform: scale(1.1); 
-  box-shadow: 0 0 25px #FF69B4, 0 0 50px #BB33FF; /* Más brillo */
-}
+      document.getElementById("countdown").innerHTML = `
+        <span style="color: #BB33FF;">${dias}d</span> 
+        <span style="color: #FFFFFF;">${horas}h</span> 
+        <span style="color: #FF69B4;">${minutos}m</span> 
+        <span style="color: #BB33FF;">${segundos}s</span>`;
+    }, 1000);
+  </script>
 
-@keyframes parpadeoColores {
-  0% { color: #BB33FF; }
-  33% { color: #FFFFFF; }
-  66% { color: #FF69B4; }
-  100% { color: #BB33FF; }
-}
+</body>
+</html>
