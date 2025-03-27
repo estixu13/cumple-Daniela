@@ -12,7 +12,7 @@
   <!-- BOTÓN PARA ACTIVAR MÚSICA -->
   <div style="text-align: center; margin-top: 20px;">
     <button id="activarMusica" style="
-      background-color: #FF69B4; /* Rosa vibrante */
+      background-color: #FF69B4; /* Rosa */
       color: white; 
       padding: 15px 25px; 
       font-size: 20px; 
@@ -60,8 +60,8 @@
     const iframeMusica = document.getElementById('musicaFrame');
 
     botonMusica.addEventListener('click', () => {
-      iframeMusica.src += '&autoplay=1'; // Activa la música
-      botonMusica.style.display = 'none'; // Oculta el botón después de hacer clic
+      iframeMusica.src += '&autoplay=1'; // Activo la música
+      botonMusica.style.display = 'none'; // Oculto el botón después de hacer clic
     });
 
     const evento = new Date("2025-06-01T17:00:00").getTime();
