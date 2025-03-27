@@ -18,32 +18,31 @@ body {
   width: 100vw;
   height: 100vh;
   background: url('fondo8.png') no-repeat center top;
-  background-size: cover; /* Se mantiene para mostrar los dibujos laterales */
-  background-attachment: fixed; /* Fondo fijo */
+  background-size: cover;
+  background-attachment: scroll;
   z-index: -1;
 }
 
 .container {
-  width: 70%; /* Más estrecho para que los laterales sean visibles */
-  max-width: 300px; /* Ajustar un poco más el ancho máximo */
+  width: 90%;
+  max-width: 360px;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.85); /* Negro semitransparente */
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 130vh; /* Espacio para incluir todo el contenido */
-  border-radius: 15px; /* Bordes redondeados para armonía */
+  min-height: 150vh; 
 }
 
 img.portada {
-  width: 80%; /* Ajustada al tamaño del contenedor */
-  max-width: 220px;
+  width: 80%;
+  max-width: 240px;
   height: auto;
   border-radius: 20px;
   box-shadow: 0 0 20px #FF4ECB;
-  margin-top: 30px; /* Espaciado para posicionarla mejor */
+  margin-top: 50px;
 }
 
 h1, h2, p, .countdown, .mensaje-rsvp, footer {
@@ -65,41 +64,8 @@ p, .countdown, .mensaje-rsvp {
   font-size: 1rem;
 }
 
-a.ubicacion, .mensaje-rsvp a {
-  color: #BB33FF; /* Morado brillante */
-  font-size: 1.2rem; /* Tamaño mayor */
-  font-weight: bold;
-  text-decoration: underline;
-}
-
 footer {
-  margin-top: 40px; /* Espaciado suficiente */
-  font-size: 1em;
-  color: #FF4ECB; /* Color acorde */
-}
-
-@keyframes parpadeoColor {
-  0% { color: #FF4ECB; opacity: 1; }
-  50% { color: #fff; opacity: 0.6; }
-  100% { color: #FF4ECB; opacity: 1; }
-}
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.8rem;
-  }
-  h2 {
-    font-size: 1.2rem;
-  }
-  p, .countdown, .mensaje-rsvp {
-    font-size: 0.9rem;
-  }
-  .container {
-    width: 85%; /* Ajuste para dispositivos pequeños */
-    padding: 15px;
-  }
-  img.portada {
-    margin-top: 15px;
-    width: 80%;
-  }
+  margin-top: 50px;
+  font-size: 1em; 
+  color: #FF4ECB; 
 }
