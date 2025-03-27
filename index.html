@@ -9,19 +9,30 @@
 </head>
 <body>
 
-  <!-- MÚSICA INVISIBLE -->
-<div style="position: absolute; width: 1px; height: 1px; overflow: hidden;">
-  <iframe width="1" height="1" 
-    src="https://www.youtube.com/embed/nGawAhRjtoA?autoplay=1&loop=1&playlist=nGawAhRjtoA" 
-    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-  </iframe>
-</div>
-
+  <!-- BOTÓN PARA ACTIVAR MÚSICA -->
+  <div style="text-align: center; margin-top: 20px;">
+    <button id="activarMusica" style="
+      background-color: #BB33FF; 
+      color: white; 
+      padding: 10px 20px; 
+      font-size: 18px; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      box-shadow: 0 0 10px #BB33FF;">
+      🎵 Activar Música
+    </button>
+  </div>
+  <div style="position: absolute; width: 1px; height: 1px; overflow: hidden;">
+    <iframe id="musicaFrame" width="1" height="1" 
+      src="https://www.youtube.com/embed/nGawAhRjtoA?loop=1&playlist=nGawAhRjtoA" 
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>
 
   <div class="fondo"></div>
   <div class="container">
     <img class="portada" src="imagen.jpg" alt="Daniela Monster High">
-
     <h1>¡Daniela cumple 7 años!</h1>
     <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
 
@@ -35,25 +46,21 @@
     <p><strong>Lugar:</strong> Parque de bolas</p>
     <a class="ubicacion" href="https://www.google.com/maps" target="_blank">📍 Ver ubicación en Google Maps</a>
 
-    <div class="mensaje-rsvp">
-      💌 <strong>Confirma tu asistencia como toda una monstruita:</strong><br>
-      mándame un gritito por WhatsApp o una señal espeluznantemente fabulosa.<br>
-      ¡Te espero! 💜🕷️<br><br>
-
-      <a class="boton-whatsapp" href="https://wa.me/34661198835" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="24" style="vertical-align: middle; margin-right: 10px;">
-        Escríbeme por WhatsApp
-      </a>
-    </div>
-
     <footer>
       <p>Con cariño, Daniela</p>
       <span class="corazon-parpadeante">💜</span>
     </footer>
   </div>
 
-  <!-- CUENTA REGRESIVA -->
   <script>
+    const botonMusica = document.getElementById('activarMusica');
+    const iframeMusica = document.getElementById('musicaFrame');
+
+    botonMusica.addEventListener('click', () => {
+      iframeMusica.src += '&autoplay=1'; // Agrego música cuando haga click
+      botonMusica.style.display = 'none'; // Oculto el botón después de activarlo
+    });
+
     const evento = new Date("2025-06-01T17:00:00").getTime();
     const cuentaRegresiva = setInterval(function () {
       const ahora = new Date().getTime();
