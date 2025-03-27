@@ -49,10 +49,14 @@ img.portada {
 
 h1 {
   font-size: 3rem;
-  color: #FF4ECB;
-  animation: cambioColor 3s infinite;
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+/* Título con brillo y animación */
+.titulo-brillante {
+  color: #FF4ECB;
+  animation: cambioColor 3s infinite, brilloTexto 2s infinite;
 }
 
 @keyframes cambioColor {
@@ -60,6 +64,18 @@ h1 {
   33% { color: #FFFFFF; }
   66% { color: #BB33FF; }
   100% { color: #FF69B4; }
+}
+
+@keyframes brilloTexto {
+  0% {
+    text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4, 0 0 15px #BB33FF, 0 0 20px #BB33FF;
+  }
+  50% {
+    text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FF69B4, 0 0 30px #BB33FF, 0 0 40px #FFFFFF;
+  }
+  100% {
+    text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4, 0 0 15px #BB33FF, 0 0 20px #BB33FF;
+  }
 }
 
 h2.detalles-evento {
@@ -87,13 +103,44 @@ footer {
   text-align: center;
 }
 
-footer .corazon-parpadeante {
-  font-size: 6rem;
-  display: block;
-  margin: 10px auto;
-  animation: parpadeoColores 2s infinite;
+/* Corazón con latido y cambio de color */
+@keyframes parpadeoLatido {
+  0% {
+    color: #FF69B4;
+    transform: scale(1);
+    text-shadow: 0 0 10px #FF69B4;
+  }
+  25% {
+    color: #FFFFFF;
+    transform: scale(1.2);
+    text-shadow: 0 0 20px #FFFFFF;
+  }
+  50% {
+    color: #BB33FF;
+    transform: scale(1);
+    text-shadow: 0 0 15px #BB33FF;
+  }
+  75% {
+    color: #FF69B4;
+    transform: scale(1.2);
+    text-shadow: 0 0 20px #FF69B4;
+  }
+  100% {
+    color: #FF69B4;
+    transform: scale(1);
+    text-shadow: 0 0 10px #FF69B4;
+  }
 }
 
+.corazon-parpadeante-latido {
+  font-size: 7rem; /* Tamaño grande */
+  display: block;
+  margin: 10px auto;
+  animation: parpadeoLatido 2s infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Botón de música */
 .boton-container {
   text-align: center;
   margin-top: 20px;
