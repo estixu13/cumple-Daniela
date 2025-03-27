@@ -29,11 +29,11 @@ body {
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
-  background-color: black; /* Contenedor negro */
+  background-color: black; /* Fondo negro */
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 110vh; /* Espacio suficiente para desplazarse */
+  min-height: 120vh; /* Aumenta el espacio para desplazarse */
 }
 
 img.portada {
@@ -42,7 +42,7 @@ img.portada {
   height: auto;
   border-radius: 20px;
   box-shadow: 0 0 20px #FF4ECB;
-  margin-top: 20px; /* Inicio dentro del contenedor */
+  margin-top: 15px; /* Ajuste para estar bien dentro del recuadro */
 }
 
 h1, h2, p, .countdown, .mensaje-rsvp, footer {
@@ -65,7 +65,7 @@ p, .countdown, .mensaje-rsvp {
 }
 
 footer {
-  margin-top: 50px; /* Espaciado mayor */
+  margin-top: 30px; /* Espaciado extra */
   font-size: 0.9em;
-  color: #FF4ECB; /* Color acorde */
+  color: #FF4ECB;
 }
