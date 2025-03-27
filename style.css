@@ -70,7 +70,6 @@ footer {
   color: #FF4ECB;
 }
 
-
 a.morado-brillante {
   color: #D291FF !important;
   font-weight: bold;
@@ -78,38 +77,36 @@ a.morado-brillante {
   animation: parpadeoColor 2s ease-in-out infinite;
 }
 
- */
 a.boton-whatsapp {
-  display: inline-block;
-  background-color: #25D366;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #25D366, #1ebe57);
   color: white !important;
-  padding: 10px 16px;
-  border-radius: 30px;
+  padding: 14px 24px;
+  border-radius: 50px;
   font-weight: bold;
-  margin-top: 10px;
+  font-size: 1.2rem;
+  margin-top: 20px;
   text-decoration: none;
-  box-shadow: 0 0 10px #25D366;
-  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 0 20px #25D366, 0 0 40px #25D366;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
 }
 
 a.boton-whatsapp:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #25D366, 0 0 60px #25D366;
 }
-
 
 .corazon-parpadeante {
-  font-size: 4rem;
-  animation: parpadeoColor 2s ease-in-out infinite;
-  margin-top: 10px;
+  font-size: 6rem;
+  animation: parpadeoColor 1.5s ease-in-out infinite;
+  margin-top: 20px;
 }
-
 
 @keyframes parpadeoColor {
   0%   { color: #FF4ECB; }
   33%  { color: #FFFFFF; }
   66%  { color: #D291FF; }
   100% { color: #FF4ECB; }
-}
-
-  100% { color: #FF4ECB; }   /* vuelve al rosa */
 }
