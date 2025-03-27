@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: 'Chewy', 'Comic Sans MS', cursive, sans-serif;
   color: #FF4ECB;
   text-align: center;
   overflow-x: hidden;
@@ -24,6 +24,7 @@ body {
   padding: 20px;
   background-color: transparent;
   margin: 0 auto;
+  width: 360px;
   max-width: 90vw;
 }
 
@@ -32,18 +33,18 @@ h1, h2, p, .countdown, .mensaje-rsvp, footer {
 }
 
 h1 {
-  font-size: 6vw;
+  font-size: 2.5rem;
   color: #FF4ECB;
   margin-top: 20px;
   animation: parpadeoColor 2s ease-in-out infinite;
 }
 
 h2 {
-  font-size: 5vw;
+  font-size: 2rem;
 }
 
-p, .countdown {
-  font-size: 4.5vw;
+p, .countdown, .mensaje-rsvp {
+  font-size: 1.2rem;
 }
 
 @media (min-width: 768px) {
@@ -55,24 +56,15 @@ p, .countdown {
     font-size: 2em;
   }
 
-  p, .countdown {
+  p, .countdown, .mensaje-rsvp {
     font-size: 1.3em;
   }
 }
 
 @keyframes parpadeoColor {
-  0% {
-    color: #FF4ECB;
-    opacity: 1;
-  }
-  50% {
-    color: #fff;
-    opacity: 0.6;
-  }
-  100% {
-    color: #FF4ECB;
-    opacity: 1;
-  }
+  0% { color: #FF4ECB; opacity: 1; }
+  50% { color: #fff; opacity: 0.6; }
+  100% { color: #FF4ECB; opacity: 1; }
 }
 
 .countdown {
@@ -102,7 +94,6 @@ a.ubicacion {
 }
 
 .mensaje-rsvp {
-  font-size: 1.2em;
   padding: 15px;
   margin-top: 20px;
   max-width: 600px;
@@ -130,16 +121,12 @@ a.ubicacion {
     font-size: 1.6rem;
   }
 
-  p, .countdown {
+  p, .countdown, .mensaje-rsvp {
     font-size: 1rem;
-  }
-
-  .mensaje-rsvp {
-    font-size: 1rem;
-    padding: 10px;
   }
 
   img.portada {
     max-width: 100%;
   }
 }
+
