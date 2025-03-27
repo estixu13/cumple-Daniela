@@ -10,10 +10,12 @@
 <body>
 
   <!-- MÚSICA -->
- <audio autoplay loop>
+<audio id="musica" autoplay loop muted>
   <source src="https://estixu13.github.io/cumple-Daniela/audio.mp3" type="audio/mpeg">
   Tu navegador no soporta audio.
 </audio>
+<button onclick="document.getElementById('musica').muted = false">Activar sonido</button>
+
 
 
   <div class="fondo"></div>
