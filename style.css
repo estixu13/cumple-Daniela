@@ -21,7 +21,7 @@ body {
   background-size: cover;
   background-attachment: scroll;
   z-index: -1;
-  opacity: 0.9; /* Para hacer que los dibujos laterales sean más visibles */
+  opacity: 0.9;
 }
 
 .container {
@@ -66,8 +66,8 @@ p, .countdown, .mensaje-rsvp {
 }
 
 a.ubicacion, .mensaje-rsvp a {
-  color: #9400D3; /* Morado brillante */
-  font-size: 1.1rem; /* Más grande */
+  color: #9400D3; 
+  font-size: 1.1rem;
   text-decoration: underline;
   font-weight: bold;
   display: inline-block;
