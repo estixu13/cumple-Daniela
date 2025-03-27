@@ -21,6 +21,7 @@ body {
   background-size: cover;
   background-attachment: scroll;
   z-index: -1;
+  opacity: 0.9; /* Para hacer que los dibujos laterales sean más visibles */
 }
 
 .container {
@@ -29,11 +30,11 @@ body {
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
-  background-color: black; /* Fondo negro */
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 150vh; 
+  min-height: 150vh;
 }
 
 img.portada {
@@ -42,7 +43,7 @@ img.portada {
   height: auto;
   border-radius: 20px;
   box-shadow: 0 0 20px #FF4ECB;
-  margin-top: 50px; 
+  margin-top: 50px;
 }
 
 h1, h2, p, .countdown, .mensaje-rsvp, footer {
@@ -64,9 +65,41 @@ p, .countdown, .mensaje-rsvp {
   font-size: 1rem;
 }
 
-footer {
-  margin-top: 50px;
-  font-size: 1em; 
-  color: #FF4ECB; 
+a.ubicacion, .mensaje-rsvp a {
+  color: #9400D3; /* Morado brillante */
+  font-size: 1.1rem; /* Más grande */
+  text-decoration: underline;
+  font-weight: bold;
+  display: inline-block;
 }
 
+footer {
+  margin-top: 50px;
+  font-size: 1em;
+  color: #FF4ECB;
+}
+
+@keyframes parpadeoColor {
+  0% { color: #FF4ECB; opacity: 1; }
+  50% { color: #fff; opacity: 0.6; }
+  100% { color: #FF4ECB; opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  p, .countdown, .mensaje-rsvp {
+    font-size: 0.9rem;
+  }
+  .container {
+    padding: 10px;
+  }
+  img.portada {
+    margin-top: 10px;
+    width: 90%;
+  }
+}
