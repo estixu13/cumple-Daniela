@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invitación de Daniela - Monster High</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -12,7 +12,7 @@
   <div class="fondo"></div>
 
   <div class="container">
-    <img class="portada" src="imagen.jpg" alt="Daniela Monster High" />
+    <img class="portada" src="imagen.jpg" alt="Daniela Monster High">
 
     <h1>¡Daniela cumple 7 años!</h1>
     <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
@@ -28,12 +28,12 @@
     <a class="ubicacion" href="https://www.google.com/maps" target="_blank">📍 Ver ubicación en Google Maps</a>
 
     <div class="mensaje-rsvp">
-      💌 <strong>Confirma tu asistencia como toda una monstruita:</strong><br />
-      mándame un gritito por WhatsApp o una señal espeluznantemente fabulosa.<br />
-      ¡Te espero! 💜🕷️<br /><br />
+      💌 <strong>Confirma tu asistencia como toda una monstruita:</strong><br>
+      mándame un gritito por WhatsApp o una señal espeluznantemente fabulosa.<br>
+      ¡Te espero! 💜🕷️<br><br>
 
       <a href="https://wa.me/34661198835" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30" style="vertical-align: middle;" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30" style="vertical-align: middle;">
         Escríbeme por WhatsApp
       </a>
     </div>
@@ -51,8 +51,8 @@
 
       const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
       const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+      const minutos = Math.floor((distancia % (1000 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % 1000) / 1000);
 
       document.getElementById("countdown").innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
 
@@ -62,5 +62,6 @@
       }
     }, 1000);
   </script>
+
 </body>
 </html>
