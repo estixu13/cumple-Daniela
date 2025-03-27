@@ -9,20 +9,15 @@
 </head>
 <body>
 
-  <!-- MÚSICA -->
-<audio id="musica" autoplay loop muted>
-  <source src="https://estixu13.github.io/cumple-Daniela/audio.mp3" type="audio/mpeg">
-  <source src="https://estixu13.github.io/cumple-Daniela/audio.ogg" type="audio/ogg">
-  Tu navegador no soporta audio.
-</audio>
-<button onclick="document.getElementById('musica').muted = false; document.getElementById('musica').play()">🎵 Activar Música</button>
-
-  
-
-
+  <!-- MÚSICA INVISIBLE -->
+  <div style="position: absolute; width: 1px; height: 1px; overflow: hidden;">
+    <iframe width="560" height="315" 
+      src="https://www.youtube.com/embed/nGawAhRjtoA?autoplay=1&loop=1&playlist=nGawAhRjtoA" 
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+  </div>
 
   <div class="fondo"></div>
-
   <div class="container">
     <img class="portada" src="imagen.jpg" alt="Daniela Monster High">
 
@@ -56,7 +51,7 @@
     </footer>
   </div>
 
-  <!-- SCRIPT DE CUENTA REGRESIVA -->
+  <!-- CUENTA REGRESIVA -->
   <script>
     const evento = new Date("2025-06-01T17:00:00").getTime();
     const cuentaRegresiva = setInterval(function () {
