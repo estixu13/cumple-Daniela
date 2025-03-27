@@ -19,12 +19,12 @@ body {
   height: 100vh;
   background: url('fondo8.png') no-repeat center top;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
   z-index: -1;
 }
 
 .container {
-  width: 100%;
+  width: 90%;
   max-width: 360px;
   margin: 0 auto;
   padding: 20px;
@@ -36,13 +36,12 @@ body {
 }
 
 img.portada {
-  width: 85%;
-  max-width: 280px;
+  width: 100%;
   height: auto;
   border-radius: 20px;
   box-shadow: 0 0 20px #FF4ECB;
   margin-bottom: 15px;
-  transform: translateX(5%);
+  transform: translateX(0);
 }
 
 h1, h2, p, .countdown, .mensaje-rsvp, footer {
@@ -86,4 +85,23 @@ a.ubicacion {
   0% { color: #FF4ECB; opacity: 1; }
   50% { color: #fff; opacity: 0.6; }
   100% { color: #FF4ECB; opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  p, .countdown, .mensaje-rsvp {
+    font-size: 0.9rem;
+  }
+  .container {
+    padding: 10px;
+  }
+  img.portada {
+    margin-top: 10px;
+    width: 90%;
+  }
 }
