@@ -22,11 +22,13 @@ body {
 
 .container {
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.15); /* antes era 0.5 */
   border-radius: 20px;
   margin: 0 auto;
   max-width: 90vw;
+  backdrop-filter: blur(2px); /* efecto suave detrás */
 }
+
 
 h1, h2, p {
   line-height: 1.6;
