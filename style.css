@@ -78,7 +78,7 @@ a.morado-brillante {
   animation: parpadeoColor 2s ease-in-out infinite;
 }
 
-
+ */
 a.boton-whatsapp {
   display: inline-block;
   background-color: #25D366;
@@ -96,9 +96,20 @@ a.boton-whatsapp:hover {
   transform: scale(1.05);
 }
 
+
+.corazon-parpadeante {
+  font-size: 4rem;
+  animation: parpadeoColor 2s ease-in-out infinite;
+  margin-top: 10px;
+}
+
+
 @keyframes parpadeoColor {
-  0%   { color: #FF4ECB; }   /* rosa */
-  33%  { color: #FFFFFF; }   /* blanco */
-  66%  { color: #D291FF; }   /* morado brillante */
+  0%   { color: #FF4ECB; }
+  33%  { color: #FFFFFF; }
+  66%  { color: #D291FF; }
+  100% { color: #FF4ECB; }
+}
+
   100% { color: #FF4ECB; }   /* vuelve al rosa */
 }
