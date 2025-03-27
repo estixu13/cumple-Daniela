@@ -96,9 +96,9 @@ a.boton-whatsapp:hover {
   transform: scale(1.05);
 }
 
-
 @keyframes parpadeoColor {
-  0% { color: #FF4ECB; }
-  50% { color: #ffffff; }
-  100% { color: #FF4ECB; }
+  0%   { color: #FF4ECB; }   /* rosa */
+  33%  { color: #FFFFFF; }   /* blanco */
+  66%  { color: #D291FF; }   /* morado brillante */
+  100% { color: #FF4ECB; }   /* vuelve al rosa */
 }
