@@ -24,7 +24,7 @@ body {
 }
 
 .container {
-  width: 70%; 
+  width: 70%;
   max-width: 300px;
   margin: 0 auto;
   padding: 20px;
@@ -45,29 +45,24 @@ img.portada {
   margin-top: 50px;
 }
 
-h1, h2, p, .countdown, .mensaje-rsvp, footer {
-  text-shadow: 2px 2px 4px #000;
-  margin: 10px 0;
-}
-
 h1 {
   font-size: 2rem;
   animation: parpadeoColor 2s ease-in-out infinite;
 }
 
-h2 {
+h2.detalles-evento {
   font-size: 1.4rem;
   margin-top: 20px;
-  color: #BB33FF;
-  animation: parpadeoColores 3s infinite; 
+  color: #BB33FF; 
+  animation: parpadeoColores 3s infinite;
 }
 
-p, .countdown, .mensaje-rsvp {
+p, .countdown {
   font-size: 1rem;
 }
 
-a.morado-brillante, .boton-whatsapp {
-  color: #BB33FF;
+a.ubicacion {
+  color: #BB33FF; 
   font-size: 1.2rem;
   font-weight: bold;
   text-decoration: underline;
@@ -81,7 +76,9 @@ footer {
 }
 
 footer .corazon-parpadeante {
-  font-size: 3rem; 
+  font-size: 4rem; 
+  display: block;
+  margin: 10px auto;
   animation: parpadeoColores 2s infinite;
 }
 
@@ -97,4 +94,3 @@ footer .corazon-parpadeante {
   50% { color: #fff; opacity: 0.6; }
   100% { color: #FF4ECB; opacity: 1; }
 }
-
