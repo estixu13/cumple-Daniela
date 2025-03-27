@@ -32,8 +32,8 @@
       mándame un gritito por WhatsApp o una señal espeluznantemente fabulosa.<br>
       ¡Te espero! 💜🕷️<br><br>
 
-      <a href="https://wa.me/34661198835" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30" style="vertical-align: middle;">
+      <a class="boton-whatsapp" href="https://wa.me/34661198835" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="24" style="vertical-align: middle; margin-right: 10px;">
         Escríbeme por WhatsApp
       </a>
     </div>
@@ -50,24 +50,24 @@
       const ahora = new Date().getTime();
       const distancia = evento - ahora;
 
+      if (distancia < 0) {
+        clearInterval(cuentaRegresiva);
+        document.getElementById("countdown").innerHTML = "¡Ya comenzó la fiesta! 🎉";
+        return;
+      }
+
       const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
       const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((distancia % (1000 * 60)) / (1000 * 60));
-      const segundos = Math.floor((distancia % 1000) / 1000);
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
       document.getElementById("countdown").innerHTML = `
         <span style="color: #BB33FF;">${dias}d</span> 
         <span style="color: #FFFFFF;">${horas}h</span> 
         <span style="color: #FF69B4;">${minutos}m</span> 
         <span style="color: #BB33FF;">${segundos}s</span>`;
-
-      if (distancia < 0) {
-        clearInterval(cuentaRegresiva);
-        document.getElementById("countdown").innerHTML = "¡Ya comenzó la fiesta! 🎉";
-      }
     }, 1000);
   </script>
 
 </body>
 </html>
-
