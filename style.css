@@ -48,15 +48,19 @@ img.portada {
 }
 
 h1 {
-  font-size: 2rem;
-  animation: parpadeoColor 2s ease-in-out infinite;
+  font-size: 3rem; 
+  color: #FF4ECB; 
+  text-shadow: 4px 4px 10px #FF69B4, 6px 6px 15px #BB33FF; 
+  animation: titilarColor 3s infinite ease-in-out;
+  font-weight: bold;
+  margin-bottom: 20px; 
 }
 
 h2.detalles-evento {
   font-size: 1.4rem;
   margin-top: 20px;
-  color: #BB33FF;
-  animation: parpadeoColores 3s infinite;
+  color: #BB33FF; 
+  animation: parpadeoColores 3s infinite; 
 }
 
 p, .countdown {
@@ -112,9 +116,15 @@ footer .corazon-parpadeante {
   100% { color: #BB33FF; }
 }
 
+@keyframes titilarColor {
+  0% { color: #FF4ECB; }
+  33% { color: #BB33FF; }
+  66% { color: #FF69B4; }
+  100% { color: #FF4ECB; }
+}
+
 @keyframes parpadeoColor {
   0% { color: #FF4ECB; opacity: 1; }
   50% { color: #fff; opacity: 0.6; }
   100% { color: #FF4ECB; opacity: 1; }
 }
-
