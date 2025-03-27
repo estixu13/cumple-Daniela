@@ -18,33 +18,32 @@ body {
   width: 100vw;
   height: 100vh;
   background: url('fondo8.png') no-repeat center top;
-  background-size: contain; 
-  background-attachment: scroll;
+  background-size: cover;
+  background-attachment: fixed; 
   z-index: -1;
-  opacity: 0.95; 
 }
 
 .container {
-  width: 85%; 
-  max-width: 340px;
+  width: 80%; 
+  max-width: 320px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 20px;
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.85); 
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 140vh;
+  min-height: 130vh; 
   border-radius: 15px;
 }
 
 img.portada {
-  width: 75%; /* Imagen más pequeña */
+  width: 75%;
   max-width: 220px;
   height: auto;
   border-radius: 20px;
   box-shadow: 0 0 20px #FF4ECB;
-  margin-top: 30px; 
+  margin-top: 40px; 
 }
 
 h1, h2, p, .countdown, .mensaje-rsvp, footer {
@@ -71,14 +70,12 @@ a.ubicacion, .mensaje-rsvp a {
   font-size: 1.2rem; 
   font-weight: bold;
   text-decoration: underline;
-  display: inline-block;
-  margin-top: 10px;
 }
 
 footer {
-  margin-top: 40px;
+  margin-top: 40px; 
   font-size: 1em;
-  color: #FF4ECB;
+  color: #FF4ECB; 
 }
 
 @keyframes parpadeoColor {
@@ -106,4 +103,3 @@ footer {
     width: 80%;
   }
 }
-
