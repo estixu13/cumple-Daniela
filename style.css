@@ -133,7 +133,7 @@ footer {
 }
 
 .corazon-parpadeante-latido {
-  font-size: 20rem; /* Tamaño enorme para destacar */
+  font-size: 15rem; /* Tamaño enorme para destacar */
   display: block; /* Lo trato como bloque para centrarlo mejor */
   margin: 10px auto; /* Centro con auto y separo un poco */
   animation: parpadeoLatido 2s infinite; /* Aplico animación de latido */
