@@ -1,118 +1,118 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Chewy', 'Comic Sans MS', cursive, sans-serif;
-  color: #FF4ECB;
-  text-align: center;
-  background-color: black;
-  overflow-x: hidden;
-  overflow-y: auto;
-  min-height: 100vh;
-  position: relative;
+  margin: 0; /* Quito todo el margen por defecto del navegador */
+  padding: 0; /* Elimino cualquier relleno externo */
+  font-family: 'Chewy', 'Comic Sans MS', cursive, sans-serif; /* Uso una fuente divertida y cursiva */
+  color: #FF4ECB; /* Color de texto rosado brillante */
+  text-align: center; /* CentrO todo el texto dentro del body */
+  background-color: black; /* Fondo negro para un estilo Monster High oscuro */
+  overflow-x: hidden; /* Evito que haya scroll horizontal */
+  overflow-y: auto; /* Permitido scroll vertical si el contenido lo requiere */
+  min-height: 100vh; /* Me aseguro que el body tenga al menos el alto de la pantalla */
+  position: relative; /* Esto me permite posicionar elementos hijos de forma absoluta si lo necesito */
 }
 
 .fondo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url('fondo8.png') no-repeat center top;
-  background-size: cover;
-  background-attachment: scroll;
-  z-index: -1;
+  position: fixed; /* Fijo el fondo para que no se mueva con el scroll */
+  top: 0; /* Lo coloco arriba del todo */
+  left: 0; /* Y también alineado a la izquierda */
+  width: 100vw; /* Ocupa todo el ancho de la ventana */
+  height: 100vh; /* Y también todo el alto */
+  background: url('fondo8.png') no-repeat center top; /* Pongo una imagen centrada en la parte superior */
+  background-size: cover; /* Hago que la imagen cubra toda la pantalla */
+  background-attachment: scroll; /* El fondo se mueve con el contenido (no fijo como "parallax") */
+  z-index: -1; /* Lo coloco detrás de todo */
 }
 
 .container {
-  width: 70%;
-  max-width: 300px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 150vh;
+  width: 70%; /* El contenido ocupa el 70% del ancho de la ventana */
+  max-width: 300px; /* Pero nunca más de 300px */
+  margin: 0 auto; /* Lo centro horizontalmente */
+  padding: 20px; /* Le doy espacio interno */
+  box-sizing: border-box; /* Incluyo el padding dentro del tamaño total */
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente negro */
+  backdrop-filter: blur(4px); /* Aplico desenfoque detrás del fondo */
+  border-radius: 20px; /* Bordes redondeados */
+  display: flex; /* Uso flexbox para organizar los elementos dentro */
+  flex-direction: column; /* Los hijos se apilan verticalmente */
+  align-items: center; /* Centro los hijos horizontalmente */
+  min-height: 150vh; /* Me aseguro de que tenga bastante altura (más del 100%) */
 }
 
 img.portada {
-  width: 80%;
-  max-width: 240px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 0 20px #FF4ECB;
-  margin-top: 50px;
+  width: 80%; /* La imagen ocupa el 80% del contenedor */
+  max-width: 240px; /* Pero nunca más de 240px */
+  height: auto; /* Mantengo proporciones */
+  border-radius: 20px; /* Bordes redondeados para la imagen */
+  box-shadow: 0 0 20px #FF4ECB; /* Sombra rosa brillante para que resalte */
+  margin-top: 50px; /* Espacio arriba de la imagen */
 }
 
 h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-size: 3rem; /* Letra muy grande */
+  font-weight: bold; /* En negrita */
+  margin-bottom: 20px; /* Espacio por debajo del título */
 }
 
 /* Título con brillo y animación */
 .titulo-brillante {
-  color: #FF4ECB;
-  animation: cambioColor 3s infinite, brilloTexto 2s infinite;
+  color: #FF4ECB; /* Color rosa */
+  animation: cambioColor 3s infinite, brilloTexto 2s infinite; /* Dos animaciones en bucle: cambio de color y brillo */
 }
 
 @keyframes cambioColor {
-  0% { color: #FF69B4; }
-  33% { color: #FFFFFF; }
-  66% { color: #BB33FF; }
-  100% { color: #FF69B4; }
+  0% { color: #FF69B4; } /* Rosa fuerte */
+  33% { color: #FFFFFF; } /* Blanco */
+  66% { color: #BB33FF; } /* Morado */
+  100% { color: #FF69B4; } /* Vuelve al rosa fuerte */
 }
 
 @keyframes brilloTexto {
   0% {
-    text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4, 0 0 15px #BB33FF, 0 0 20px #BB33FF;
+    text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4, 0 0 15px #BB33FF, 0 0 20px #BB33FF; /* Brillo suave inicial */
   }
   50% {
-    text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FF69B4, 0 0 30px #BB33FF, 0 0 40px #FFFFFF;
+    text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FF69B4, 0 0 30px #BB33FF, 0 0 40px #FFFFFF; /* Máximo brillo intermedio */
   }
   100% {
-    text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4, 0 0 15px #BB33FF, 0 0 20px #BB33FF;
+    text-shadow: 0 0 5px #FF69B4, 0 0 10px #FF69B4, 0 0 15px #BB33FF, 0 0 20px #BB33FF; /* Vuelve al inicio */
   }
 }
 
 h2.detalles-evento {
-  font-size: 1.4rem;
-  margin-top: 20px;
-  color: #BB33FF;
-  animation: parpadeoColores 3s infinite;
+  font-size: 1.4rem; /* Tamaño de fuente mediano */
+  margin-top: 20px; /* Espacio superior */
+  color: #BB33FF; /* Morado brillante */
+  animation: parpadeoColores 3s infinite; /* Aplico animación de cambio de color */
 }
 
 p, .countdown {
-  font-size: 1rem;
+  font-size: 1rem; /* Tamaño de letra estándar */
 }
 
 a.ubicacion {
-  color: #BB33FF;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-decoration: underline;
+  color: #BB33FF; /* Morado */
+  font-size: 1.2rem; /* Un poco más grande para resaltar */
+  font-weight: bold; /* En negrita */
+  text-decoration: underline; /* Subrayado para indicar que es un enlace */
 }
 
 footer {
-  margin-top: 50px;
-  font-size: 1em;
-  color: #FF4ECB;
-  text-align: center;
+  margin-top: 50px; /* Espacio encima del footer */
+  font-size: 1em; /* Tamaño normal */
+  color: #FF4ECB; /* Texto en rosa */
+  text-align: center; /* Centrado */
 }
 
 /* Corazón con latido y cambio de color */
 @keyframes parpadeoLatido {
   0% {
     color: #FF69B4;
-    transform: scale(1);
+    transform: scale(1); /* Tamaño normal */
     text-shadow: 0 0 10px #FF69B4;
   }
   25% {
     color: #FFFFFF;
-    transform: scale(1.2);
+    transform: scale(1.2); /* Aumento de tamaño */
     text-shadow: 0 0 20px #FFFFFF;
   }
   50% {
@@ -133,80 +133,80 @@ footer {
 }
 
 .corazon-parpadeante-latido {
-  font-size: 7rem; /* Tamaño grande */
-  display: block;
-  margin: 10px auto;
-  animation: parpadeoLatido 2s infinite;
-  transition: transform 0.3s ease-in-out;
+  font-size: 7rem; /* Tamaño enorme para destacar */
+  display: block; /* Lo trato como bloque para centrarlo mejor */
+  margin: 10px auto; /* Centro con auto y separo un poco */
+  animation: parpadeoLatido 2s infinite; /* Aplico animación de latido */
+  transition: transform 0.3s ease-in-out; /* Suavizo cambios en escala */
 }
 
 /* Botón de música */
 .boton-container {
-  text-align: center;
-  margin-top: 20px;
+  text-align: center; /* Centra el botón */
+  margin-top: 20px; /* Espacio arriba del botón */
 }
 
 .boton-musica {
-  background-color: #FF69B4;
-  color: white;
-  padding: 15px 25px;
-  font-size: 20px;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 0 15px #FF69B4, 0 0 30px #BB33FF;
-  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #FF69B4; /* Rosa fuerte */
+  color: white; /* Texto blanco */
+  padding: 15px 25px; /* Relleno interno grande */
+  font-size: 20px; /* Tamaño del texto grande */
+  font-weight: bold; /* Negrita */
+  border: none; /* Sin borde */
+  border-radius: 10px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor tipo "mano" */
+  box-shadow: 0 0 15px #FF69B4, 0 0 30px #BB33FF; /* Sombra rosa/morada brillante */
+  transition: transform 0.3s, box-shadow 0.3s; /* Animaciones suaves al pasar el ratón */
 }
 
 .boton-musica:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px #FF69B4, 0 0 50px #BB33FF;
+  transform: scale(1.1); /* Lo agrando un poco */
+  box-shadow: 0 0 25px #FF69B4, 0 0 50px #BB33FF; /* Aumento la sombra al pasar el ratón */
 }
 
 @keyframes parpadeoColores {
-  0% { color: #BB33FF; }
-  33% { color: #FFFFFF; }
-  66% { color: #FF69B4; }
-  100% { color: #BB33FF; }
+  0% { color: #BB33FF; } /* Morado */
+  33% { color: #FFFFFF; } /* Blanco */
+  66% { color: #FF69B4; } /* Rosa fuerte */
+  100% { color: #BB33FF; } /* Vuelve al morado */
 }
 
 /* BOTÓN WHATSAPP */
 .whatsapp-container {
-  margin-top: 30px;
-  text-align: center;
+  margin-top: 30px; /* Espacio encima del botón */
+  text-align: center; /* Centrado */
 }
 
 .mensaje-whatsapp {
-  font-size: 1.2rem;
-  color: #FFFFFF;
-  margin-bottom: 10px;
-  animation: parpadeoColores 2s infinite;
+  font-size: 1.2rem; /* Letra un poco grande */
+  color: #FFFFFF; /* Texto blanco */
+  margin-bottom: 10px; /* Espacio debajo del mensaje */
+  animation: parpadeoColores 2s infinite; /* Aplico el cambio de colores animado */
 }
 
 .boton-whatsapp {
-  display: inline-block;
-  padding: 12px 25px;
-  background: linear-gradient(45deg, #25d366, #128c7e);
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 50px;
-  box-shadow: 0 0 12px #25d366, 0 0 20px #128c7e;
-  animation: brillo-ws 2s infinite alternate;
-  transition: transform 0.2s;
-  font-size: 1.1rem;
+  display: inline-block; /* Se comporta como un botón */
+  padding: 12px 25px; /* Relleno interno cómodo */
+  background: linear-gradient(45deg, #25d366, #128c7e); /* Fondo degradado de verde estilo WhatsApp */
+  color: white; /* Texto blanco */
+  font-weight: bold; /* En negrita */
+  text-decoration: none; /* Sin subrayado */
+  border-radius: 50px; /* Forma de píldora */
+  box-shadow: 0 0 12px #25d366, 0 0 20px #128c7e; /* Sombra verde brillante */
+  animation: brillo-ws 2s infinite alternate; /* Animación suave de brillo */
+  transition: transform 0.2s; /* Suavizo al hacer hover */
+  font-size: 1.1rem; /* Tamaño mediano */
 }
 
 .boton-whatsapp:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Lo agrando un poco al pasar el ratón */
 }
 
 @keyframes brillo-ws {
   from {
-    box-shadow: 0 0 10px #25d366, 0 0 20px #128c7e;
+    box-shadow: 0 0 10px #25d366, 0 0 20px #128c7e; /* Sombra más suave */
   }
   to {
-    box-shadow: 0 0 20px #25d366, 0 0 30px #128c7e;
+    box-shadow: 0 0 20px #25d366, 0 0 30px #128c7e; /* Sombra más intensa */
   }
 }
