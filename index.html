@@ -1,75 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invitación de Daniela - Monster High</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hago que sea responsive para móviles -->
+  <title>Invitación de Daniela - Monster High</title> <!-- Título de la pestaña del navegador -->
+  <link rel="stylesheet" href="style.css"> <!-- Enlazo el archivo de estilos CSS externo -->
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet"> <!-- Importo una fuente divertida desde Google Fonts -->
 </head>
 <body>
 
-  <!-- BOTÓN PARA ACTIVAR MÚSICA -->
+  <!-- Aquí creo un contenedor para el botón que activa la música -->
   <div class="boton-container">
+    <!-- Este es el botón que se verá en pantalla para iniciar la música -->
     <button id="activarMusica" class="boton-musica">
       👻 Toca aquí y deja que la diversión comience 🎶
     </button>
   </div>
+
+  <!-- Aquí escondo el reproductor de YouTube para la música -->
   <div style="position: absolute; width: 1px; height: 1px; overflow: hidden;">
+    <!-- Este iframe reproduce la música desde YouTube sin que se vea -->
     <iframe id="musicaFrame" width="1" height="1" 
       src="https://www.youtube.com/embed/nGawAhRjtoA?loop=1&playlist=nGawAhRjtoA" 
       frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
   </div>
 
+  <!-- Este div es el fondo decorativo con la imagen de Monster High -->
   <div class="fondo"></div>
+
+  <!-- Contenedor principal del contenido de la invitación -->
   <div class="container">
+
+    <!-- Imagen principal de la portada de la cumpleañera -->
     <img class="portada" src="imagen.jpg" alt="Daniela Monster High">
 
-    <!-- Título con brillo y animación -->
+    <!-- Título destacado con efectos de brillo -->
     <h1 class="titulo-brillante">¡Daniela cumple 7 años!</h1>
 
+    <!-- Mensaje divertido para invitar -->
     <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
 
+    <!-- Aquí irá la cuenta regresiva que se actualiza por JavaScript -->
     <div class="countdown" id="countdown">
       Cargando cuenta regresiva...
     </div>
 
+    <!-- Encabezado con los detalles del evento -->
     <h2 class="detalles-evento">📍 Detalles del evento</h2>
-    <p><strong>Fecha:</strong> Junio 2025</p>
-    <p><strong>Hora:</strong> 12:00 h</p>
-    <p><strong>Lugar:</strong> Parque de bolas</p>
+    <p><strong>Fecha:</strong> Junio 2025</p> <!-- Fecha del cumple -->
+    <p><strong>Hora:</strong> 12:00 h</p> <!-- Hora del evento -->
+    <p><strong>Lugar:</strong> Parque de bolas</p> <!-- Ubicación -->
+    <!-- Enlace que abre Google Maps con la ubicación -->
     <a class="ubicacion" href="https://www.google.com/maps" target="_blank">📍 Ver ubicación en Google Maps</a>
 
-    <!-- BOTÓN WHATSAPP -->
+    <!-- Contenedor del botón de WhatsApp -->
     <div class="whatsapp-container">
+      <!-- Mensaje que invita a confirmar -->
       <p class="mensaje-whatsapp">¿Vienes? 💬 ¡Confirma tu asistencia por WhatsApp!</p>
+      <!-- Botón con enlace a WhatsApp preconfigurado -->
       <a href="https://wa.me/34661198835" target="_blank" class="boton-whatsapp">
         ✅ Confirmar asistencia
       </a>
     </div>
 
+    <!-- Pie de página con un mensaje y un corazón animado -->
     <footer>
       <p>Con cariño, Daniela</p>
-      <!-- Corazón con latido y color -->
+      <!-- Corazón que late y brilla -->
       <span class="corazon-parpadeante-latido">♥</span>
     </footer>
   </div>
 
-  <!-- Scripts -->
+  <!-- Scripts JS para animaciones y funcionalidad -->
+  <!-- Librería de confeti desde CDN -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Script personalizado para manejar la música, confeti y cuenta regresiva -->
   <script>
+    // Obtengo los elementos del DOM necesarios
     const botonMusica = document.getElementById('activarMusica');
     const iframeMusica = document.getElementById('musicaFrame');
 
+    // Al hacer clic en el botón, inicio la música y escondo el botón
     botonMusica.addEventListener('click', () => {
       iframeMusica.src += '&autoplay=1';
       botonMusica.style.display = 'none';
 
       // Iniciar confeti durante 5 segundos
-      const duration = 5 * 1000;
+      const duration = 5 * 1000; // duración en milisegundos
       const end = Date.now() + duration;
 
+      // Lanzo confeti en bucle hasta que pasen los 5 segundos
       (function frame() {
         confetti({
           particleCount: 6,
@@ -90,29 +112,32 @@
       })();
     });
 
-    // Cuenta regresiva
-    const evento = new Date("2025-06-01T17:00:00").getTime();
+    // Aquí configuro la cuenta regresiva hasta el día del evento
+    const evento = new Date("2025-06-01T17:00:00").getTime(); // Fecha objetivo
     const cuentaRegresiva = setInterval(function () {
-      const ahora = new Date().getTime();
-      const distancia = evento - ahora;
+      const ahora = new Date().getTime(); // Momento actual
+      const distancia = evento - ahora; // Diferencia
 
       if (distancia < 0) {
+        // Si ya pasó, muestro mensaje y paro el contador
         clearInterval(cuentaRegresiva);
         document.getElementById("countdown").innerHTML = "¡Ya comenzó la fiesta! 🎉";
         return;
       }
 
+      // Calculo días, horas, minutos y segundos restantes
       const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
       const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
       const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
+      // Actualizo el contenido con los valores y estilos
       document.getElementById("countdown").innerHTML = `
         <span style="color: #BB33FF;">${dias}d</span> 
         <span style="color: #FFFFFF;">${horas}h</span> 
         <span style="color: #FF69B4;">${minutos}m</span> 
         <span style="color: #BB33FF;">${segundos}s</span>`;
-    }, 1000);
+    }, 1000); // Actualizo cada segundo
   </script>
 
 </body>
