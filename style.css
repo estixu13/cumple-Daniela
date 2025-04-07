@@ -181,16 +181,16 @@ footer {
 .btn-gps:before {
   content: '';
   position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
   border-radius: 50%; /* Bordes redondeados */
   z-index: -1; /* Lo coloca detrás del botón */
   background: linear-gradient(45deg, #FF3F9E, #C139A7);
   background-size: 400% 400%;
   animation: sparkleAround 1.5s infinite; /* Purpurina animada alrededor */
-  filter: blur(8px); /* Suaviza el brillo para crear el efecto de purpurina */
+  filter: blur(10px); /* Suaviza el brillo para crear el efecto de purpurina */
 }
 
 /* Animación de purpurina alrededor del botón */
@@ -247,6 +247,7 @@ footer {
     font-size: 18px; /* Hacer la purpurina aún más pequeña */
   }
 }
+
 
 /* BOTÓN DE CONFIRMACIÓN DE WHATSAPP */
 .boton-whatsapp {
