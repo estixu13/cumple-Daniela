@@ -213,7 +213,7 @@ footer {
 
 @keyframes pulseText {
   0% { text-shadow: 0 0 15px #FF69B4, 0 0 30px #FF69B4; } /* Brillo rosa suave */
-  50% { text-shadow: 0 0 25px #BB33FF, 0 0 50px #BB33FF; } /* Brillo morado más intenso */
+  50% { text-shadow: 0 0 30px #BB33FF, 0 0 60px #BB33FF; } /* Brillo morado más intenso */
   100% { text-shadow: 0 0 15px #FF69B4, 0 0 30px #FF69B4; } /* Vuelve al rosa suave */
 }
 
@@ -321,17 +321,4 @@ footer {
   }
 }
 
-/* Fondo de purpurina con brillo animado */
-.purpurina {
-  position: fixed; /* Fijo en toda la pantalla */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url('https://cdn.pixabay.com/photo/2016/11/18/21/59/stars-1839170_960_720.jpg') repeat; /* Imagen de fondo purpurina */
-  background-size: 100px 100px; /* Tamaño de la purpurina */
-  animation: sparkleEffect 2s infinite ease-in-out; /* Efecto de parpadeo de la purpurina */
-  z-index: -1; /* Asegura que el fondo esté detrás de los elementos del contenido */
-  pointer-events: none; /* Evita que interfiera con los clics o interacciones de los usuarios */
-}
 
