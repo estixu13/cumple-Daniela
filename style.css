@@ -154,26 +154,36 @@ footer {
   display: inline-block;
   position: relative;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra para resaltar el botón */
-  transition: background 0.3s ease;
   overflow: hidden;
+  transition: background 0.3s ease;
 }
 
-/* Efecto de purpurina animada */
-.btn-gps:after {
-  content: ' ✨';
+/* Efecto de purpurina alrededor del botón */
+.btn-gps:before {
+  content: '✨';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 28px;
-  animation: sparkle 1.5s infinite;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50px; /* Bordes redondeados */
+  z-index: -1; /* Lo coloca detrás del botón */
+  background: linear-gradient(45deg, #FF3F9E, #C139A7);
+  background-size: 200% 200%;
+  animation: sparkleAround 1.5s infinite; /* Purpurina animada alrededor */
 }
 
-/* Animación de purpurina */
-@keyframes sparkle {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
+/* Animación de purpurina alrededor del botón */
+@keyframes sparkleAround {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 /* Efecto de parpadeo en el texto del botón */
@@ -187,3 +197,27 @@ footer {
   100% { text-shadow: 0 0 15px #FF69B4, 0 0 30px #FF69B4; } /* Vuelve al rosa suave */
 }
 
+/* Estilos responsivos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .btn-gps {
+    padding: 12px 25px; /* Menos relleno en móviles */
+    font-size: 18px; /* Texto un poco más pequeño */
+    width: 100%; /* El botón ocupa todo el ancho de la pantalla */
+  }
+  
+  .btn-gps:before {
+    font-size: 20px; /* Hago la purpurina más pequeña en móviles */
+  }
+}
+
+/* Estilos responsivos para pantallas muy pequeñas (como teléfonos más pequeños) */
+@media (max-width: 480px) {
+  .btn-gps {
+    padding: 10px 20px; /* Menos relleno aún en pantallas pequeñas */
+    font-size: 16px; /* Reducir aún más el tamaño del texto */
+  }
+  
+  .btn-gps:before {
+    font-size: 18px; /* Hacer la purpurina aún más pequeña */
+  }
+}
