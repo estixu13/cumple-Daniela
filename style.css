@@ -172,9 +172,9 @@ footer {
   text-align: center;
   display: inline-block;
   position: relative;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra para resaltar el botón */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 20px #FF69B4; /* Sombra para resaltar el botón */
   overflow: hidden;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /* Efecto de purpurina alrededor del botón */
@@ -211,6 +211,16 @@ footer {
   animation: pulseText 1s infinite;
 }
 
+@media (max-width: 480px) {
+  .btn-gps {
+    padding: 10px 20px; /* Menos relleno aún en pantallas pequeñas */
+    font-size: 16px; /* Reducir aún más el tamaño del texto */
+  }
+  
+  .btn-gps:before {
+    font-size: 18px; /* Hacer la purpurina aún más pequeña */
+  }
+}
 @keyframes pulseText {
   0% { text-shadow: 0 0 15px #FF69B4, 0 0 30px #FF69B4; } /* Brillo rosa suave */
   50% { text-shadow: 0 0 25px #BB33FF, 0 0 50px #BB33FF; } /* Brillo morado más intenso */
