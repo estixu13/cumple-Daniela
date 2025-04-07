@@ -140,7 +140,26 @@ footer {
   transition: transform 0.3s ease-in-out; /* Suavizo cambios en escala */
 }
 
-/* BOTÓN CON GRADIENTE, PURPURINA Y PARPADEO EN EL TEXTO */
+/* Botón de música (toca aquí y deja que la diversión comience) */
+.boton-container {
+  text-align: center; /* Centra el botón */
+  margin-top: 20px; /* Espacio arriba del botón */
+}
+
+.boton-musica {
+  background-color: #FF69B4; /* Rosa fuerte */
+  color: white; /* Texto blanco */
+  padding: 15px 25px; /* Relleno interno grande */
+  font-size: 20px; /* Tamaño del texto grande */
+  font-weight: bold; /* Negrita */
+  border: none; /* Sin borde */
+  border-radius: 10px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor tipo "mano" */
+  box-shadow: 0 0 15px #FF69B4, 0 0 30px #BB33FF; /* Sombra rosa/morada brillante */
+  transition: transform 0.3s, box-shadow 0.3s; /* Animaciones suaves al pasar el ratón */
+}
+
+/* Efecto de purpurina alrededor del botón */
 .btn-gps {
   background: linear-gradient(45deg, #FF3F9E, #C139A7); /* Colores brillantes y vibrantes */
   color: white;
@@ -253,4 +272,3 @@ footer {
     font-size: 18px; /* Hacer la purpurina aún más pequeña */
   }
 }
-
