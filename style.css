@@ -160,7 +160,7 @@ footer {
 
 /* Efecto de purpurina alrededor del botón */
 .btn-gps:before {
-  content: '✨';
+  content: '';
   position: absolute;
   top: -5px;
   left: -5px;
@@ -169,8 +169,9 @@ footer {
   border-radius: 50px; /* Bordes redondeados */
   z-index: -1; /* Lo coloca detrás del botón */
   background: linear-gradient(45deg, #FF3F9E, #C139A7);
-  background-size: 200% 200%;
+  background-size: 400% 400%;
   animation: sparkleAround 1.5s infinite; /* Purpurina animada alrededor */
+  filter: blur(8px); /* Suaviza el brillo para crear el efecto de purpurina */
 }
 
 /* Animación de purpurina alrededor del botón */
@@ -195,6 +196,37 @@ footer {
   0% { text-shadow: 0 0 15px #FF69B4, 0 0 30px #FF69B4; } /* Brillo rosa suave */
   50% { text-shadow: 0 0 25px #BB33FF, 0 0 50px #BB33FF; } /* Brillo morado más intenso */
   100% { text-shadow: 0 0 15px #FF69B4, 0 0 30px #FF69B4; } /* Vuelve al rosa suave */
+}
+
+/* BOTÓN DE CONFIRMACIÓN DE WHATSAPP */
+.boton-whatsapp {
+  display: inline-block; /* Se comporta como un botón */
+  padding: 12px 25px; /* Relleno interno cómodo */
+  background: linear-gradient(45deg, #25d366, #128c7e); /* Fondo degradado de verde estilo WhatsApp */
+  color: white;  /* Texto blanco */
+  font-weight: bold; /* En negrita */
+  text-decoration: none;  /* Sin subrayado */
+  border-radius: 50px; /* Forma de píldora */
+  font-size: 1.1rem;  /* Tamaño mediano */
+
+  animation: pulso 1.5s infinite;
+  box-shadow: 0 0 12px #25d366, 0 0 20px #128c7e;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+@keyframes pulso {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #25d366, 0 0 15px #128c7e;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 16px #25d366, 0 0 25px #128c7e;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #25d366, 0 0 15px #128c7e;
+  }
 }
 
 /* Estilos responsivos para pantallas pequeñas (móviles) */
