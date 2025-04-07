@@ -211,6 +211,7 @@ footer {
   animation: pulseText 1s infinite;
 }
 
+
 @media (max-width: 480px) {
   .btn-gps {
     padding: 10px 20px; /* Menos relleno aún en pantallas pequeñas */
