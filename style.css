@@ -304,3 +304,34 @@ footer {
     font-size: 18px; /* Hacer la purpurina aún más pequeña */
   }
 }
+
+/* Purpurina animada en toda la pantalla */
+@keyframes sparkleEffect {
+  0% {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+}
+
+/* Fondo de purpurina con brillo animado */
+.purpurina {
+  position: fixed; /* Fijo en toda la pantalla */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://cdn.pixabay.com/photo/2016/11/18/21/59/stars-1839170_960_720.jpg') repeat; /* Imagen de fondo purpurina */
+  background-size: 100px 100px; /* Tamaño de la purpurina */
+  animation: sparkleEffect 2s infinite ease-in-out; /* Efecto de parpadeo de la purpurina */
+  z-index: -1; /* Asegura que el fondo esté detrás de los elementos del contenido */
+  pointer-events: none; /* Evita que interfiera con los clics o interacciones de los usuarios */
+}
+
