@@ -39,7 +39,7 @@ body {
 }
 
 img.portada {
-  width: 80%; /* La imagen ocupa el 80% del contenedor */
+  width: 95%; /* La imagen ocupa el 95% del contenedor */
   max-width: 240px; /* Pero nunca más de 240px */
   height: auto; /* Mantengo proporciones */
   border-radius: 20px; /* Bordes redondeados para la imagen */
