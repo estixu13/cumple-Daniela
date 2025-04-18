@@ -39,12 +39,12 @@ body {
 }
 
 img.portada {
-  width: 95%; /* La imagen ocupa el 95% del contenedor */
-  max-width: 240px; /* Pero nunca más de 240px */
+  width: 100%; /* La imagen ocupa el 100% del contenedor */
+  max-width: 100%; /* No restringir más que el contenedor */
   height: auto; /* Mantengo proporciones */
   border-radius: 20px; /* Bordes redondeados para la imagen */
   box-shadow: 0 0 20px #FF4ECB; /* Sombra rosa brillante para que resalte */
-  margin-top: 50px; /* Espacio arriba de la imagen */
+  margin-top: 30px; /* Espacio arriba de la imagen */
 }
 
 h1 {
