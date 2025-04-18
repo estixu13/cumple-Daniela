@@ -9,6 +9,9 @@
 </head>
 <body>
 
+  <!-- Partículas mágicas de estrellas y corazones -->
+  <div id="particles-js"></div>
+
   <!-- Aquí creo un contenedor para el botón que activa la música -->
   <div class="boton-container">
     <!-- Este es el botón que se verá en pantalla para iniciar la música -->
@@ -28,9 +31,6 @@
 
   <!-- Este div es el fondo decorativo con la imagen de Monster High -->
   <div class="fondo"></div>
-  <!-- Partículas mágicas flotantes -->
-<div id="particles-js"></div>
-
 
   <!-- Contenedor principal del contenido de la invitación -->
   <div class="container">
@@ -55,24 +55,17 @@
     <p><strong>Hora:</strong> 17:00 h</p> <!-- Hora del evento -->
     <p><strong>Lugar:</strong> Parque de bolas Mi Lugar Favorito</p> <!-- Ubicación -->
     <!-- Enlace que abre Google Maps con la ubicación -->
- <a class="ubicacion" href="https://www.google.com/maps/dir/?api=1&destination=Parque+de+bolas+Mi+Lugar+Favorito" target="_blank">
-  <button class="btn-gps">📍 ¡Haz clic aquí y que el GPS te guíe a la aventura! 🎊</button>
-</a>
-
-
-
-
-
+    <a class="ubicacion" href="https://www.google.com/maps/dir/?api=1&destination=Parque+de+bolas+Mi+Lugar+Favorito" target="_blank">
+      <button class="btn-gps">📍 ¡Haz clic aquí y que el GPS te guíe a la aventura! 🎊</button>
+    </a>
 
     <!-- Contenedor del botón de WhatsApp -->
     <div class="whatsapp-container">
       <!-- Mensaje que invita a confirmar -->
       <p class="mensaje-whatsapp">¿Vienes? 💬 </p>
       <!-- Botón con enlace a WhatsApp preconfigurado -->
-        <a href="https://wa.me/34661198835?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumple%20monstruosamente%20fabuloso%20de%20Daniela.%20Gracias%20por%20la%20invitación%20💜🎂🎉" target="_blank" class="boton-whatsapp">
-  ✅ Confirma la asistencia pulsando aquí
-</a>
-
+      <a href="https://wa.me/34661198835?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumple%20monstruosamente%20fabuloso%20de%20Daniela.%20Gracias%20por%20la%20invitación%20💜🎂🎉" target="_blank" class="boton-whatsapp">
+        ✅ Confirma la asistencia pulsando aquí
       </a>
     </div>
 
@@ -83,7 +76,6 @@
       <span class="corazon-parpadeante-latido">♥</span>
     </footer>
   </div>
-
 
   <!-- Scripts JS para animaciones y funcionalidad -->
   <!-- Librería de confeti desde CDN -->
@@ -104,7 +96,7 @@
       const duration = 8 * 1000; // duración en milisegundos
       const end = Date.now() + duration;
 
-      // Lanzo confeti en bucle hasta que pasen los 5 segundos
+      // Lanzo confeti en bucle hasta que pasen los 8 segundos
       (function frame() {
         confetti({
           particleCount: 6,
@@ -150,60 +142,61 @@
         <span style="color: #FFFFFF;">${horas}h</span> 
         <span style="color: #FF69B4;">${minutos}m</span> 
         <span style="color: #BB33FF;">${segundos}s</span>`;
-    }, 1000); // Actualizo cada segundo
+    }, 1000);
   </script>
-<!-- Cargar librería tsParticles -->
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
 
-<!-- Configuración de partículas -->
-<script>
-  tsParticles.load("particles-js", {
-    fullScreen: {
-      enable: true,
-      zIndex: -1
-    },
-    particles: {
-      number: {
-        value: 30,
-        density: {
-          enable: true,
-          area: 800
-        }
-      },
-      color: {
-        value: ["#FF69B4", "#BB33FF", "#FFFFFF"] // rosa, morado y blanco
-      },
-      shape: {
-        type: ["star", "heart"], // Mezclamos estrellitas y corazones
-      },
-      opacity: {
-        value: 0.7,
-        random: true
-      },
-      size: {
-        value: 10,
-        random: {
-          enable: true,
-          minimumValue: 5
-        }
-      },
-      move: {
+  <!-- Cargar librería tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
+
+  <!-- Configuración de partículas mágicas -->
+  <script>
+    tsParticles.load("particles-js", {
+      fullScreen: {
         enable: true,
-        speed: 1,
-        direction: "none",
-        random: true,
-        outModes: {
-          default: "out"
+        zIndex: -1
+      },
+      particles: {
+        number: {
+          value: 30,
+          density: {
+            enable: true,
+            area: 800
+          }
+        },
+        color: {
+          value: ["#FF69B4", "#BB33FF", "#FFFFFF"]
+        },
+        shape: {
+          type: ["star", "heart"]
+        },
+        opacity: {
+          value: 0.7,
+          random: true
+        },
+        size: {
+          value: 10,
+          random: {
+            enable: true,
+            minimumValue: 5
+          }
+        },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          random: true,
+          outModes: {
+            default: "out"
+          }
+        }
+      },
+      background: {
+        color: {
+          value: "transparent"
         }
       }
-    },
-    background: {
-      color: {
-        value: "transparent"
-      }
-    }
-  });
-</script>
+    });
+  </script>
 
 </body>
 </html>
