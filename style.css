@@ -331,28 +331,23 @@ footer {
   height: 100vh;
   pointer-events: none;
   background-image:
-    radial-gradient(#FF69B4 1px, transparent 1px),
-    radial-gradient(#BB33FF 1px, transparent 1px);
-  background-size: 40px 40px, 60px 60px;
-  background-position: 0 0, 20px 20px;
-  opacity: 0.3;
-  animation: parpadeoEstrellas 8s linear infinite;
-  z-index: 0;
+    radial-gradient(#FF69B4 1.5px, transparent 1.5px),
+    radial-gradient(#BB33FF 1.5px, transparent 1.5px);
+  background-size: 20px 20px, 30px 30px; /* Estrellas más juntas */
+  background-position: 0 0, 15px 15px; /* Posiciones alternadas para profundidad */
+  opacity: 0.7; /* Más visibles */
+  animation: parpadeoEstrellas 6s ease-in-out infinite;
+  z-index: -1; /* Detrás del contenido */
+  filter: brightness(1.3); /* Aumenta el brillo general */
 }
 
 @keyframes parpadeoEstrellas {
-  0% {
+  0%, 100% {
     transform: translateY(0) scale(1);
-    opacity: 0.4;
+    opacity: 0.7;
   }
   50% {
-    transform: translateY(-10px) scale(1.05);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.4;
+    transform: translateY(-6px) scale(1.1);
+    opacity: 1;
   }
 }
-
-
