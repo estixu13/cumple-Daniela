@@ -322,69 +322,15 @@ footer {
     transform: scale(1.1);
   }
 }
-/* Estrella base */
-.estrella {
+/* Contenedor de partículas mágicas */
+#particles-js {
   position: fixed;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  animation: twinkle 3s infinite ease-in-out;
-  z-index: 1;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
 
-/* Estrella rosa */
-.estrella-rosa {
-  background-color: #FF69B4;
-  top: 20%;
-  left: 30%;
-  box-shadow: 0 0 12px #FF69B4, 0 0 25px #FF69B4;
-}
-
-/* Estrella morada */
-.estrella-morada {
-  background-color: #BB33FF;
-  top: 50%;
-  left: 60%;
-  animation-delay: 0.8s;
-  box-shadow: 0 0 12px #BB33FF, 0 0 25px #BB33FF;
-}
-
-/* Estrella blanca */
-.estrella-blanca {
-  background-color: #FFFFFF;
-  top: 10%;
-  left: 80%;
-  animation-delay: 1.2s;
-  box-shadow: 0 0 12px #FFFFFF, 0 0 25px #FFFFFF;
-}
-
-/* Otra morada */
-.estrella-morada2 {
-  background-color: #BB33FF;
-  top: 70%;
-  left: 15%;
-  animation-delay: 0.4s;
-  box-shadow: 0 0 12px #BB33FF, 0 0 25px #BB33FF;
-}
-
-/* Otra rosa */
-.estrella-rosa2 {
-  background-color: #FF69B4;
-  top: 40%;
-  left: 50%;
-  animation-delay: 1.5s;
-  box-shadow: 0 0 12px #FF69B4, 0 0 25px #FF69B4;
-}
-
-/* Animación de parpadeo */
-@keyframes twinkle {
-  0%, 100% {
-    opacity: 0.6;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.5);
-  }
-}
 
