@@ -152,6 +152,58 @@
         <span style="color: #BB33FF;">${segundos}s</span>`;
     }, 1000); // Actualizo cada segundo
   </script>
+<!-- Cargar librería tsParticles -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
+
+<!-- Configuración de partículas -->
+<script>
+  tsParticles.load("particles-js", {
+    fullScreen: {
+      enable: true,
+      zIndex: -1
+    },
+    particles: {
+      number: {
+        value: 30,
+        density: {
+          enable: true,
+          area: 800
+        }
+      },
+      color: {
+        value: ["#FF69B4", "#BB33FF", "#FFFFFF"] // rosa, morado y blanco
+      },
+      shape: {
+        type: ["star", "heart"], // Mezclamos estrellitas y corazones
+      },
+      opacity: {
+        value: 0.7,
+        random: true
+      },
+      size: {
+        value: 10,
+        random: {
+          enable: true,
+          minimumValue: 5
+        }
+      },
+      move: {
+        enable: true,
+        speed: 1,
+        direction: "none",
+        random: true,
+        outModes: {
+          default: "out"
+        }
+      }
+    },
+    background: {
+      color: {
+        value: "transparent"
+      }
+    }
+  });
+</script>
 
 </body>
 </html>
