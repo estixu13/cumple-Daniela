@@ -41,12 +41,13 @@ body {
 img.portada {
   width: 100%; /* La imagen ocupa el 100% del contenedor */
   max-width: 100%; /* No restringir más que el contenedor */
-  aspect-ratio: 3 / 4; /* para que tenga forma más vertical */
-  height: auto; /* Mantengo proporciones */
+  height: 420px; /* Más presencia vertical */
+  object-fit: cover; /* Rellena sin deformar */
   border-radius: 20px; /* Bordes redondeados para la imagen */
   box-shadow: 0 0 20px #FF4ECB; /* Sombra rosa brillante para que resalte */
   margin-top: 20px; /* Espacio arriba de la imagen */
 }
+
 
 h1 {
   font-size: 3rem; /* Letra muy grande */
