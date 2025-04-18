@@ -9,15 +9,17 @@
 </head>
 <body>
 
-  <!-- Partículas mágicas de estrellas y corazones -->
+  <!-- Fondo de partículas mágicas -->
   <div id="particles-js"></div>
 
+  <!-- Botón de música -->
   <div class="boton-container">
     <button id="activarMusica" class="boton-musica">
       👻 Toca aquí y deja que la diversión comience 🎶
     </button>
   </div>
 
+  <!-- Reproductor oculto de música -->
   <div style="position: absolute; width: 1px; height: 1px; overflow: hidden;">
     <iframe id="musicaFrame" width="1" height="1" 
       src="https://www.youtube.com/embed/nGawAhRjtoA?loop=1&playlist=nGawAhRjtoA" 
@@ -25,15 +27,16 @@
     </iframe>
   </div>
 
+  <!-- Fondo Monster High -->
   <div class="fondo"></div>
 
+  <!-- Contenedor principal -->
   <div class="container">
     <img class="portada" src="imagen1.jpg" alt="Daniela Monster High">
-
     <h1 class="titulo-brillante">¡Daniela cumple 7 años!</h1>
-
     <p>¡Estás invitad@ al cumpleaños más <strong>monstruosamente fabuloso</strong> del año! 💀🎉🎂</p>
 
+    <!-- Cuenta regresiva -->
     <div class="countdown" id="countdown">
       Cargando cuenta regresiva...
     </div>
@@ -63,69 +66,8 @@
   <!-- Confeti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-  <script>
-    const botonMusica = document.getElementById('activarMusica');
-    const iframeMusica = document.getElementById('musicaFrame');
-
-    botonMusica.addEventListener('click', () => {
-      iframeMusica.src += '&autoplay=1';
-      botonMusica.style.display = 'none';
-
-      const duration = 8 * 1000;
-      const end = Date.now() + duration;
-
-      (function frame() {
-        confetti({
-          particleCount: 6,
-          angle: 60,
-          spread: 55,
-          origin: { x: 0 }
-        });
-        confetti({
-          particleCount: 6,
-          angle: 120,
-          spread: 55,
-          origin: { x: 1 }
-        });
-
-        if (Date.now() < end) {
-          requestAnimationFrame(frame);
-        }
-      })();
-    });
-
-    const evento = new Date("2025-06-01T17:00:00").getTime();
-    const cuentaRegresiva = setInterval(function () {
-      const ahora = new Date().getTime();
-      const distancia = evento - ahora;
-
-      if (distancia < 0) {
-        clearInterval(cuentaRegresiva);
-        document.getElementById("countdown").innerHTML = "¡Ya comenzó la fiesta! 🎉";
-        return;
-      }
-
-      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown").innerHTML = `
-        <span style="color: #BB33FF;">${dias}d</span> 
-        <span style="color: #FFFFFF;">${horas}h</span> 
-        <span style="color: #FF69B4;">${minutos}m</span> 
-        <span style="color: #BB33FF;">${segundos}s</span>`;
-    }, 1000);
-  </script>
-
-  <!-- Cargar librería tsParticles -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.min.js"></script>
-
-  <!-- Cargar la forma de corazón para tsParticles -->
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
-
-
-  <!-- Configuración de partículas mágicas -->
+  <!-- tsParticles para estrellas y corazones mágicos -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.3.0/tsparticles.bundle.min.js"></script>
   <script>
     window.addEventListener("load", () => {
       tsParticles.load("particles-js", {
@@ -177,5 +119,62 @@
     });
   </script>
 
+  <!-- Música y confeti -->
+  <script>
+    const botonMusica = document.getElementById('activarMusica');
+    const iframeMusica = document.getElementById('musicaFrame');
+
+    botonMusica.addEventListener('click', () => {
+      iframeMusica.src += '&autoplay=1';
+      botonMusica.style.display = 'none';
+
+      const duration = 8000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 6,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 }
+        });
+        confetti({
+          particleCount: 6,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 }
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    });
+
+    const evento = new Date("2025-06-01T17:00:00").getTime();
+    const cuentaRegresiva = setInterval(() => {
+      const ahora = new Date().getTime();
+      const distancia = evento - ahora;
+
+      if (distancia < 0) {
+        clearInterval(cuentaRegresiva);
+        document.getElementById("countdown").innerHTML = "¡Ya comenzó la fiesta! 🎉";
+        return;
+      }
+
+      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = `
+        <span style="color: #BB33FF;">${dias}d</span> 
+        <span style="color: #FFFFFF;">${horas}h</span> 
+        <span style="color: #FF69B4;">${minutos}m</span> 
+        <span style="color: #BB33FF;">${segundos}s</span>`;
+    }, 1000);
+  </script>
+
 </body>
 </html>
+
