@@ -148,9 +148,9 @@
   <!-- Cargar librería tsParticles -->
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.min.js"></script>
 
-
-  <!-- Configuración de partículas mágicas -->
-  <script>
+<!-- Configuración de partículas mágicas -->
+<script>
+  window.addEventListener("load", () => {
     tsParticles.load("particles-js", {
       fullScreen: {
         enable: true,
@@ -197,7 +197,5 @@
         }
       }
     });
-  </script>
-
-</body>
-</html>
+  });
+</script>
