@@ -322,5 +322,37 @@ footer {
     transform: scale(1.1);
   }
 }
+/* Fondo de estrellitas animadas en rosa/morado */
+.estrellas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background-image:
+    radial-gradient(#FF69B4 1px, transparent 1px),
+    radial-gradient(#BB33FF 1px, transparent 1px);
+  background-size: 40px 40px, 60px 60px;
+  background-position: 0 0, 20px 20px;
+  opacity: 0.3;
+  animation: parpadeoEstrellas 8s linear infinite;
+  z-index: 0;
+}
+
+@keyframes parpadeoEstrellas {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.4;
+  }
+}
 
 
